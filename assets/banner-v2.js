@@ -1,19 +1,20 @@
+const drawerOpenbtn = document.querySelector(".open-drawer");
+const drawerClosebtn = document.querySelector(".close-drawer");
+const drawer = document.querySelector(".drawer--main--banner");
 
-var drawerOpenbtn= document.querySelector(".open-drawer");
-var drawerClosebtn=document.querySelector(".close-drawer");
-var drawer=document.querySelector(".drawer--main--banner");
 
-drawerOpenbtn.addEventListener("click", function(){
-  drawerClosebtn.classList.add("show")
-  drawerOpenbtn.classList.remove("show");
-  drawer.classList.add("active");
+if (drawerOpenbtn && drawerClosebtn && drawer) {
 
-})
+  drawerOpenbtn.addEventListener("click", function () {
+    drawerClosebtn.classList.add("show");
+    drawerOpenbtn.classList.remove("show");
+    drawer.classList.add("active");
+  });
 
-drawerClosebtn.addEventListener("click", function(){
-  drawerClosebtn.classList.remove("show");
-  drawerOpenbtn.classList.add("show");
-  drawer.classList.remove("active");
+  drawerClosebtn.addEventListener("click", function () {
+    drawerClosebtn.classList.remove("show");
+    drawerOpenbtn.classList.add("show");
+    drawer.classList.remove("active");
+  });
 
-})
-
+}
