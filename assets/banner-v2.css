@@ -130,3 +130,17 @@ a.banner__btn {
     display: flex;
     align-items: flex-end;
 }
+
+.mobile-image {
+    display:none;
+}
+
+
+@media screen and (max-width: 768px){
+    .mobile-image {
+    display:block;
+   }
+   .desktop-image {
+    display:none;
+   }
+}
