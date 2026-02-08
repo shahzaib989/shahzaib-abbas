@@ -54,7 +54,7 @@
                 </div>
             {% endif %}
               {% if section.settings.banner-content-desktop != blank %}
-                <div class="content__text  ">
+                <div class="content__text {%if section.settings.banner-content-mobile %} hide-mobile {% endif %}">
                     {{ section.settings.banner-content-desktop }}
                 </div>
               {% endif %}
