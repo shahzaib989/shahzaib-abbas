@@ -201,5 +201,14 @@ a.banner__btn {
     font-size: 30px;
     line-height: 100%;
     margin: 0;
+    text-align:center;
     }
+  .content__inner--main {
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+    max-width: 100%;
+    justify-content: center;
+    align-items:center;
+   }
 }
