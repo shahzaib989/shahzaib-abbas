@@ -293,5 +293,6 @@ a.banner__btn {
 }
 .banner__top--bar--wrapper {
       z-index: 2;
+      position:relative;
 }
 }
