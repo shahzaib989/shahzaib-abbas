@@ -1,0 +1,21 @@
+.banner__top--bar--inner {
+    display: grid;
+    grid-template-columns: 1fr auto 1fr;
+    align-items: center;
+}
+
+.banner__top--button {
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+}
+
+.banner__top--logo {
+    max-width: 151px;
+}
+
+img.logo--header {
+    width: 100%;
+    height: auto;
+    display: block;
+}
