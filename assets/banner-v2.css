@@ -253,7 +253,7 @@ a.banner__btn {
 }
 
 .banner__top--bar--wrapper {
-    background: #f5f5f5;
+    background: #f7f7f7;
     padding: 23px 0;
 }
 .banner__top--bar--inner {
@@ -268,5 +268,9 @@ a.banner__btn {
     top: 50%;
     transform: translateY(-50%);
     display:block;
+}
+.drawer--main--banner {
+    background: #F2F2F2;
+    padding: 25px 65px;
 }
 }
