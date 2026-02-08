@@ -117,15 +117,16 @@ a.banner__btn {
     display:block;
     height:auto;
 }
-
+.banner--main--middle {
+    position: relative;
+}
 .content__wrapper--main {
     padding: 50px;
     position: absolute;
-    top: 0px;
-    left: 0px;
+    top: 0;
+    left: 0;
     height: 100%;
     width: 100%;
-}
-.banner--main--middle {
-    position: relative;
+    display: flex;
+    align-items: flex-end;
 }
