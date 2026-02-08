@@ -8,14 +8,15 @@
    .container{
     max-width:1350px;
     padding:0px 14px;
+    margin:0px auto;
   }
 </style>
 
 <div class="banner__v2--wrapper banner--{{ section.id }}">
    <div class="banner__v2--inner">
      <div class="main--banner--v2">
-        <div class="banner__top--bar--wrapper  container">
-            <div class="banner__top--bar--inner">
+        <div class="banner__top--bar--wrapper">
+            <div class="banner__top--bar--inner container">
              {% if section.settings.header-logo != blank %}
                <div class="banner__top--logo">
                 <img class="logo--header" src="{{ section.settings.header-logo  | image_url }}" alt="logo--header" height="{{ section.settings.header-logo.height }}" width="{{ section.settings.header-logo.width }}" >

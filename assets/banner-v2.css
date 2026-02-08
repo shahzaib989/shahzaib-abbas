@@ -19,3 +19,7 @@ img.logo--header {
     height: auto;
     display: block;
 }
+
+.banner__top--bar--wrapper   {
+    background: #F5F5F5;
+}
