@@ -291,4 +291,7 @@ a.banner__btn {
 .drawer--main--banner.active{
  top: 65px;
 }
+.banner__top--bar--wrapper {
+      z-index: 2;
+}
 }
