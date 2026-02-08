@@ -134,6 +134,9 @@ a.banner__btn {
 .image__main--wrapper .mobile-image {
     display:none;
 }
+.hide-desktop {
+   display: none;
+}
 
 @media screen and (max-width: 1300px){
     .content__heading h2 {
@@ -225,5 +228,20 @@ a.banner__btn {
     letter-spacing: 0px;
     text-align: center;
     color: #000;
+}
+.content__text p {
+    margin: 0;
+    font-family: Jost;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 140%;
+    letter-spacing: 0px;
+    text-align: center;
+}
+.hide-mobile {
+    display:none;
+}
+.hide-desktop {
+   display: block;
 }
 }

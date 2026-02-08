@@ -54,12 +54,17 @@
                 </div>
             {% endif %}
               {% if section.settings.banner-content-text != blank %}
-                <div class="content__text">
-                    {{ section.settings.banner-content-text }}
+                <div class="content__text {% if section.settingsbanner-content-text-mobile != blank %} hide-mobile {% endif %}">
+                    {{ section.settings.banner-content-text-desktop }}
                 </div>
-                  {% endif %}
+              {% endif %}
+               {% if section.settings.banner-content-text-mobile != blank %}
+                <div class="content__text hide-desktop">
+                    {{ section.settings.banner-content-text-mobile }}
+                </div>
+              {% endif %}
                     {% if section.settings.banner-content-button!= blank %}
-                <div class="content__button">
+                <div class="content__button hide-mobile">
                     <a href="{{ section.settings.banner-content-Link }}"  class="banner__btn">
                         {{ section.settings.banner-content-button }}
 
@@ -146,8 +151,13 @@
   },
    {
     "type": "richtext",
-    "label":"Banner Content Text",
-    "id":"banner-content-text"
+    "label":"Banner Content Text Desktop",
+    "id":"banner-content-text-desktop"
+  },
+  {
+    "type": "richtext",
+    "label":"Banner Content Text Mobile",
+    "id":"banner-content-text-mobile"
   },
   {
     "type": "text",
