@@ -34,7 +34,8 @@
         "banner-content-mobile": "<p>Discover Joy: Your Ultimate Holiday Gift Destination.</p>",
         "banner-content-button": "Shop Now",
         "banner-content-Link": "#",
-        "header-bottom-text": "<p>SUSTAINABLE, ETHICALLY MADE CLOTHES IN SIZES XXS TO 6XL</p>"
+        "header-bottom-text": "<p>SUSTAINABLE, ETHICALLY MADE CLOTHES IN SIZES XXS TO 6XL</p>",
+        "header-bottom-text-mobile": "<p>SUSTAINABLE, ETHICALLY MADE ACTIVEWEAR</p>"
       }
     }
   },
