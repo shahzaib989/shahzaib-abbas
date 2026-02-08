@@ -1,5 +1,5 @@
 {{ 'banner-v2.css' | asset_url | stylesheet_tag }}
-
+ <script src="{{ 'banner-v2.js' | asset_url }}" defer="defer"></script>
 <style>
     .banner__v2--wrapper.banner--{{ section.id }} {
     padding-top:{{ section.settings.padding-top }}px;
