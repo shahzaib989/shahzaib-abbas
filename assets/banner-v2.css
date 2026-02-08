@@ -288,7 +288,7 @@ a.banner__btn {
     width: 100%;
     z-index: 1;
 }
-.drawer--main--banner.actve{
+.drawer--main--banner.active{
  top: 65px;
 }
 }
