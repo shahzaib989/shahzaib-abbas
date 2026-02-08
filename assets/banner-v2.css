@@ -198,6 +198,7 @@ a.banner__btn {
     width: 100%;
     display: flex;
     padding-bottom: 26px;
+    justify-content: center;
 }
    .content__heading h2 {
     font-family: Jost;
