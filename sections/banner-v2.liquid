@@ -50,10 +50,10 @@
                     {{ section.settings.banner-content-text }}
                 </div>
                   {% endif %}
-                    {% if section.settings.banner-content-Link != blank %}
+                    {% if section.settings.banner-content-button!= blank %}
                 <div class="content__button">
                     <a href="{{ section.settings.banner-content-Link }}"  class="banner__btn">
-                        {{ section.settings.banner-button-text }}
+                        {{ section.settings.banner-content-button }}
                     </a>
                 </div>
             {% endif %}
