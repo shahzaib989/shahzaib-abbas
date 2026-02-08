@@ -11,8 +11,8 @@ drawerOpenbtn.addEventListener("click", function(){
 })
 
 drawerClosebtn.addEventListener("click", function(){
-  drawerClosebtn.remove.add("show");
-  drawerOpenbtn.add.remove("show");
+  drawerClosebtn.classList.add("show");
+  drawerOpenbtn.classList.remove("show");
   drawer.classList.remove("active");
 
 })
