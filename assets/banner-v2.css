@@ -271,6 +271,20 @@ a.banner__btn {
 }
 .drawer--main--banner {
     background: #F2F2F2;
-    padding: 25px 65px;
+    padding: 25px 40px;
 }
+.drawer--main--inner {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+    text-align: center;
+    justify-content: center;
+    align-items: center;
+}
+.drawer--main--banner {
+    height: 0px;
+    padding: 0px;
+    overflow: hidden;
+}
+
 }
