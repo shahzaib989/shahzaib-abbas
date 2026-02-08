@@ -117,3 +117,15 @@ a.banner__btn {
     display:block;
     height:auto;
 }
+
+.content__wrapper--main {
+    padding: 50px;
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    height: 100%;
+    width: 100%;
+}
+.banner--main--middle {
+    position: relative;
+}
