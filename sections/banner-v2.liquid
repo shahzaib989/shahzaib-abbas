@@ -92,8 +92,13 @@
         </div>
         <div class="banner__bottom--text">
         {% if section.settings.header-bottom-text != blank %}
-            <div class="banner__bottom--textinner">
+            <div class="banner__bottom--textinner {% if section.settings.header-bottom-text-mobile != blank %} hide-mobile {% endif %}">
                 {{ section.settings.header-bottom-text }}
+            </div>
+        {% endif %}
+         {% if section.settings.header-bottom-text-mobile != blank %}
+            <div class="banner__bottom--textinner  hide-desktop">
+                {{ section.settings.header-bottom-text-mobile }}
             </div>
         {% endif %}
         </div>
@@ -183,8 +188,13 @@
   },
   {
     "type": "richtext",
-    "label":"Header Bottom Text",
+    "label":"Banner Bottom Text",
     "id":"header-bottom-text"
+  },
+  {
+    "type": "richtext",
+    "label":"Banner Bottom Text Mobile",
+    "id":"header-bottom-text-mobile"
   }
   ],
   "presets": [

@@ -191,13 +191,14 @@ a.banner__btn {
    .image__main--wrapper .desktop-image {
     display:none;
    }
-   .content__wrapper--main {
-    padding: 50px;
-    position:static;
+  .content__wrapper--main {
+    padding: 34px;
+    position: static;
     height: 100%;
     width: 100%;
     display: flex;
-   }
+    padding-bottom: 26px;
+}
    .content__heading h2 {
     font-family: Jost;
     font-weight: 500;
@@ -243,5 +244,11 @@ a.banner__btn {
 }
 .hide-desktop {
    display: block;
+}
+.content__button.hide-desktop {
+    position: absolute;
+    bottom: 42px;
+    left: 50%;
+    transform: translateX(-50%);
 }
 }
