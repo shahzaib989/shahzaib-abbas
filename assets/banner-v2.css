@@ -283,10 +283,10 @@ a.banner__btn {
     padding: 25px 40px;
     position: fixed;
     top: -100%;
-   
     left: 0px;
     width: 100%;
     z-index: 1;
+    transition: top 0.3s ease-in-out;
 }
 .drawer--main--banner.active{
  top: 65px;
