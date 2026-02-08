@@ -131,16 +131,16 @@ a.banner__btn {
     align-items: flex-end;
 }
 
-.mobile-image {
+.image__main--wrapper .mobile-image {
     display:none;
 }
 
 
 @media screen and (max-width: 768px){
-    .mobile-image {
+    .image__main--wrapper .mobile-image {
     display:block;
    }
-   .desktop-image {
+   .image__main--wrapper .desktop-image {
     display:none;
    }
 }
