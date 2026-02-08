@@ -176,7 +176,7 @@ a.banner__btn {
     display: flex;
     flex-direction: column;
     gap: 24px;
-    max-width: 483px;
+    max-width: 40%;
 }
 
 }
