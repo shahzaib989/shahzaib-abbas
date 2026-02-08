@@ -45,6 +45,18 @@
             {% if section.settings.image-mobile != blank %}
             <img class="mobile-image" src="{{ section.settings.image-mobile | image_url }}" alt="desktop-image" height="{{ section.settings.image-desktop.height }}" width="{{ section.settings.image-mobile.width }}">
             {% endif %}
+            {% if section.settings.banner-content-button!= blank %}
+                <div class="content__button hide-desktop">
+                    <a href="{{ section.settings.banner-content-Link }}"  class="banner__btn">
+                        {{ section.settings.banner-content-button }}
+
+                        <svg width="27" height="12" viewBox="0 0 27 12" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M0.75 4.77295L7.83954e-08 4.77295L-7.83954e-08 6.27295L0.75 6.27295L0.75 4.77295ZM26.7876 6.05328C27.0805 5.76039 27.0805 5.28551 26.7876 4.99262L22.0146 0.21965C21.7217 -0.0732435 21.2468 -0.0732435 20.9539 0.21965C20.6611 0.512543 20.6611 0.987417 20.9539 1.28031L25.1966 5.52295L20.9539 9.76559C20.6611 10.0585 20.6611 10.5334 20.9539 10.8263C21.2468 11.1191 21.7217 11.1191 22.0146 10.8263L26.7876 6.05328ZM0.75 6.27295L26.2572 6.27295L26.2572 4.77295L0.75 4.77295L0.75 6.27295Z" fill="white"/>
+                        </svg>
+
+                    </a>
+                </div>
+            {% endif %}
           </div>
           <div class="content__wrapper--main ">
             <div class="content__inner--main">
