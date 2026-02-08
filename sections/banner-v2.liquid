@@ -53,14 +53,14 @@
                  {{ section.settings.banner-content-heading }}
                 </div>
             {% endif %}
-              {% if section.settings.banner-content-text-desktop != blank %}
-                <div class="content__text {% if section.settings.banner-content-text-mobile != blank %} hide-mobile {% endif %}">
-                    {{ section.settings.banner-content-text-desktop }}
+              {% if section.settings.banner-content-desktop != blank %}
+                <div class="content__text {% if section.settings.banner-content-mobile != blank %} hide-mobile {% endif %} ">
+                    {{ section.settings.banner-content-desktop }}
                 </div>
               {% endif %}
-               {% if section.settings.banner-content-text-mobile != blank %}
+               {% if section.settings.banner-content-mobile != blank %}
                 <div class="content__text hide-desktop">
-                    {{ section.settings.banner-content-text-mobile }}
+                    {{ section.settings.banner-content-mobile }}
                 </div>
               {% endif %}
                     {% if section.settings.banner-content-button!= blank %}
@@ -152,12 +152,12 @@
    {
     "type": "richtext",
     "label":"Banner Content Text Desktop",
-    "id":"banner-content-text-desktop"
+    "id":"banner-content-desktop"
   },
   {
     "type": "richtext",
     "label":"Banner Content Text Mobile",
-    "id":"banner-content-text-mobile"
+    "id":"banner-content-mobile"
   },
   {
     "type": "text",
