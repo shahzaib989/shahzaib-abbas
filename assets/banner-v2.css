@@ -211,4 +211,19 @@ a.banner__btn {
     justify-content: center;
     align-items:center;
    }
+   .banner--main--middle {
+    position: relative;
+    display: flex;
+    flex-direction: column-reverse;
+}
+.banner__bottom--textinner p {
+    margin: 0;
+    font-family: Jost;
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 13.42px;
+    letter-spacing: 0px;
+    text-align: center;
+    color: #000;
+}
 }
