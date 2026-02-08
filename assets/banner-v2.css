@@ -104,3 +104,15 @@ a.banner__btn {
     width: 220px;
     gap: 8px;
 }
+
+.content__inner--main {
+    display: flex;
+    flex-direction: column;
+    gap: 35px;
+    max-width: 483px;
+}
+
+.image__main--wrapper img{
+    width:100%;
+    display:block;
+}
