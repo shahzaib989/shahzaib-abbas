@@ -115,4 +115,5 @@ a.banner__btn {
 .image__main--wrapper img{
     width:100%;
     display:block;
+    height:auto;
 }
