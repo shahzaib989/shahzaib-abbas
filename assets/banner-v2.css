@@ -188,4 +188,18 @@ a.banner__btn {
    .image__main--wrapper .desktop-image {
     display:none;
    }
+   .content__wrapper--main {
+    padding: 50px;
+    position:static;
+    height: 100%;
+    width: 100%;
+    display: flex;
+   }
+   .content__heading h2 {
+    font-family: Jost;
+    font-weight: 500;
+    font-size: 30px;
+    line-height: 100%;
+    margin: 0;
+    }
 }
