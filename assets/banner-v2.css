@@ -281,10 +281,5 @@ a.banner__btn {
     justify-content: center;
     align-items: center;
 }
-.drawer--main--banner {
-    height: 0px;
-    padding: 0px;
-    overflow: hidden;
-}
 
 }
