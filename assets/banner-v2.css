@@ -45,4 +45,9 @@ a.header--button {
     color: #000000;
     text-decoration: none;
     padding: 12px;
+    display: flex;
+    align-items: center;
+    gap: 13px;
+    min-width: 207px;
+    justify-content: center;
 }
