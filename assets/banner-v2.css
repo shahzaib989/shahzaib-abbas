@@ -135,6 +135,51 @@ a.banner__btn {
     display:none;
 }
 
+@media screen and (max-width: 1300px){
+    .content__heading h2 {
+    font-family: Jost;
+    font-weight: 500;
+    font-size: 40px;
+    line-height: 100%;
+    margin: 0;
+}
+a.banner__btn {
+    font-family: Jost;
+    font-weight: 400;
+    font-style: Regular;
+    font-size: 16px;
+    leading-trim: NONE;
+    line-height: 20.48px;
+    letter-spacing: 0px;
+    text-align: center;
+    vertical-align: middle;
+    text-transform: uppercase;
+    color: #fff;
+    background: #000;
+    text-decoration: none;
+    padding: 13px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 193px;
+    gap: 8px;
+}
+.content__text p {
+    margin: 0;
+    font-family: Jost;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 140%;
+    letter-spacing: 0px;
+}
+.content__inner--main {
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+    max-width: 483px;
+}
+
+}
 
 @media screen and (max-width: 768px){
     .image__main--wrapper .mobile-image {
