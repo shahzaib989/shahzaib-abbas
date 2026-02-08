@@ -295,8 +295,6 @@ a.banner__btn {
       z-index: 2;
       position:relative;
 }
-.hide-desktop {
-   display: block!important;
-}
+
 
 }
