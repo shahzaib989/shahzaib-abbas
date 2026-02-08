@@ -53,6 +53,11 @@ a.header--button {
     justify-content: center;
     transition: all 0.3s ease-in-out;
 }
+
+a.header--button svg{
+    transition: all 0.3s ease-in-out;
+}
+
 .banner__bottom--text {
     background: #F5F5F5;
     padding: 11px;
@@ -104,6 +109,10 @@ a.banner__btn {
     justify-content: center;
     width: 220px;
     gap: 8px;
+    transition: all 0.3s ease-in-out;
+}
+
+a.banner__btn svg{
     transition: all 0.3s ease-in-out;
 }
 
