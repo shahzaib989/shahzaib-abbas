@@ -135,7 +135,7 @@ a.banner__btn {
     display:none;
 }
 .hide-desktop {
-   display: none;
+   display: none!important;
 }
 
 @media screen and (max-width: 1300px){
