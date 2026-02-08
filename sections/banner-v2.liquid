@@ -17,12 +17,20 @@
      <div class="main--banner--v2">
         <div class="banner__top--bar--wrapper">
             <div class="banner__top--bar--inner container">
-                <div class="drawer--icon--header hide-desktop">
+                <div class="drawer--icon--header open-drawer hide-desktop">
                     <svg width="20" height="12" viewBox="0 0 20 12" fill="none" xmlns="http://www.w3.org/2000/svg">
                     <path d="M1 6H19" stroke="black" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
                     <path d="M1 1H19" stroke="black" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
                     <path d="M1 11H19" stroke="black" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
                     </svg>
+                </div>
+                <div class="close--drawer close-drawer hide-desktop">
+
+                <svg width="15" height="15" viewBox="0 0 15 15" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M1 13.9994L13.7279 1.27147" stroke="black" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                <path d="M1 1L13.7279 13.7279" stroke="black" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                </svg>
+
                 </div>
              {% if section.settings.header-logo != blank %}
                <div class="banner__top--logo">
@@ -111,6 +119,13 @@
         </div>
      </div>
    </div>
+</div>
+<div class="drawer--main--banner">
+    <div class="drawer--main--inner">
+        <div class="drawer--header">
+
+        </div>
+    </div>
 </div>
 
 {% schema %}
