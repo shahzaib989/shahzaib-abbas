@@ -296,5 +296,21 @@ a.banner__btn {
       position:relative;
 }
 
+.open-drawer{
+    display:none;
+}
+
+.close-drawer {
+    display:none;
+}
+
+.open-drawer.show{
+    display:block;
+}
+
+.close-drawer.show{
+    display:block;
+}
+
 
 }
