@@ -260,5 +260,13 @@ a.banner__btn {
     align-items: center;
     justify-content: center;
     display: flex;
+    position:relative;
+}
+.drawer--icon--header {
+    position: absolute;
+    left: 16px;
+    top: 50%;
+    transform: translateY(-50%);
+    display:block;
 }
 }
