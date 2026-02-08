@@ -1,0 +1,163 @@
+{{ 'banner-v2.css' | asset_url | stylesheet_tag }}
+
+<style>
+    .banner__v2--wrapper.banner--{{ section.id }} {
+    padding-top:{{ section.settings.padding-top }}px;
+    padding-bottom:{{ section.settings.padding-bottom }}px;
+   }
+</style>
+
+<div class="banner__v2--wrapper banner--{{ section.id }}">
+   <div class="banner__v2--inner">
+     <div class="main--banner--v2">
+        <div class="banner__top--bar--wrapper">
+            <div class="banner__top--bar--inner">
+             {% if section.settings.header-logo != blank %}
+               <div class="banner__top--logo">
+                <img class="logo--header" src="{{ section.settings.header-logo  | image_url }}" alt="logo--header" height="{{ section.settings.header-logo.height }}" width="{{ section.settings.header-logo.width }}" >
+               </div>
+            {% endif %}
+            {% if section.settings.header-text != blank %}
+               <div class="banner__top--text">
+                  {{ section.settings.header-text }}
+               </div>
+            {% endif %}
+               <div class="banner__top--button">
+                  <a href="{{ section.settings.header-content-Link }}"  class="header--button">
+                        {{ section.settings.header-button-text }}
+                  </a>
+               </div>
+            </div>
+        </div>
+        <div class="banner--main--middle">
+          <div class="image__main--wrapper">
+            {% if section.settings.image-desktop != blank %}
+            <img class="desktop-image" src="{{ section.settings.image-desktop | image_url }}" alt="desktop-image" height="{{ section.settings.image-desktop.height }}" width="{{ section.settings.image-mobile.width }}">
+            {% endif %}
+            {% if section.settings.image-mobile != blank %}
+            <img class="mobile-image" src="{{ section.settings.image-mobile | image_url }}" alt="desktop-image" height="{{ section.settings.image-desktop.height }}" width="{{ section.settings.image-mobile.width }}">
+            {% endif %}
+          </div>
+          <div class="content__wrapper--main">
+            <div class="content__inner--main">
+                {% if section.settings.banner-content-heading != blank %}
+                <div class="content__heading">
+                 {{ section.settings.banner-content-heading }}
+                </div>
+            {% endif %}
+              {% if section.settings.banner-content-text != blank %}
+                <div class="content__text">
+                    {{ section.settings.banner-content-text }}
+                </div>
+                  {% endif %}
+                    {% if section.settings.banner-content-Link != blank %}
+                <div class="content__button">
+                    <a href="{{ section.settings.banner-content-Link }}"  class="banner__btn">
+                        {{ section.settings.banner-button-text }}
+                    </a>
+                </div>
+            {% endif %}
+            </div>
+          </div>
+        </div>
+        <div class="banner__bottom--text">
+        {% if section.settings.header-bottom-text != blank %}
+            <div class="banner__bottom--textinner">
+                {{ section.settings.header-bottom-text }}
+            </div>
+        {% endif %}
+        </div>
+     </div>
+   </div>
+</div>
+
+{% schema %}
+{
+  "name": "banner-v2",
+  "class": "banner--v2",
+  "settings": [
+  {
+    "type":"range",
+    "label":"Padding Top",
+    "id":"padding-top",
+    "min": 0,
+    "max":500,
+    "default":0,
+    "step": 5,
+    "unit": "px"
+  },
+  {
+    "type":"range",
+    "label":"Padding Bottom",
+    "id":"padding-bottom",
+    "min": 0,
+    "max":500,
+    "default":0,
+    "step": 5,
+    "unit": "px"
+  },
+  {
+    "type": "image_picker",
+    "label":"Header Logo",
+    "id":"header-logo"
+  },
+  {
+    "type": "richtext",
+    "label":"Header Text",
+    "id":"header-text"
+  },
+  {
+    "type": "text",
+    "label":"Header Button Text",
+    "id":"header-button-text"
+  },
+  {
+    "type": "url",
+    "label":"Header Button Link",
+    "id":"header-button-link"
+  },
+  {
+    "type": "image_picker",
+    "label":"Add Image Desktop",
+    "id":"image-desktop"
+  },
+   {
+    "type": "image_picker",
+    "label":"Add Image Mobile",
+    "id":"image-mobile"
+  },
+  {
+    "type": "richtext",
+    "label":"Banner Content Heading",
+    "id":"banner-content-heading"
+  },
+   {
+    "type": "richtext",
+    "label":"Banner Content Text",
+    "id":"banner-content-text"
+  },
+  {
+    "type": "text",
+    "label":"Banner Content button",
+    "id":"banner-content-button"
+  },
+  {
+    "type": "text",
+    "label":"Banner Content Link",
+    "id":"banner-content-Link"
+  },
+  {
+    "type": "richtext",
+    "label":"Header Bottom Text",
+    "id":"header-bottom-text"
+  },
+  {
+  }
+  ],
+  "presets": [
+    {
+      "name": "banner-v2",
+    }
+  ]
+}
+{% endschema %}
