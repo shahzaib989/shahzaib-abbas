@@ -8,6 +8,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
   function openPopup() {
     if (popupMain) {
+        console.log(bodyMain)
       popupMain.classList.add("active");
       bodyMain.style.overflow="hidden";
     }
