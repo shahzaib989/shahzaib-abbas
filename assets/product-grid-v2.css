@@ -12,3 +12,20 @@
     aspect-ratio: 1/1;
     object-fit: cover;
 }
+
+.main__grid--productsv2 {
+    margin-top: 30px;
+}
+
+.inner__product--grid--v2 {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+}
+
+.product__block--inner {
+    position: relative;
+}
+.popup__btn-main {
+    position:absolute;
+}
