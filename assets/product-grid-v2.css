@@ -196,6 +196,21 @@ button.add-to-cartbutton:hover svg{
     display: flex;
     flex-direction: column-reverse;
 }
+.select-trigger {
+    padding: 12px;
+    border: .5px solid #000000;
+    cursor: pointer;
+    width: 100%;
+    font-family: Jost;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 100%;
+    letter-spacing: -2%;
+    color: #000;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
 
 .option-name {
     font-family: Jost;
@@ -270,6 +285,22 @@ label.color-option {
     max-height: 106px;
     overflow-y: auto;
     top: 35px;
+}
+
+
+.main__dropdown {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    right: 14px;
+}
+
+.option__main--wrapper.custom-select::before{
+    position:absolute;
+    content:"";
+    right:0px;
+    top:0px;
+    
 }
 
 
