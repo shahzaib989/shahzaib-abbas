@@ -156,7 +156,7 @@ button.add-to-cartbutton {
 
 .custom-select {
   position: relative;
-
+  margin-bottom: 15px;
   width:100%;
 }
 .select-trigger {
