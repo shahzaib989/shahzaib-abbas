@@ -315,7 +315,7 @@ label.color-option {
 }
 
 .option__main--wrapper.custom-select.open svg{
-transform: rotate(180deg);
+transform: rotate(180deg); 
 }
 
 
