@@ -9,7 +9,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
   let currentProduct = null;
 
-  // Create loader element
+
   const loader = document.createElement("div");
   loader.className = "popup-loader";
   loader.innerHTML = `<div class="spinner"></div>`;
@@ -207,7 +207,6 @@ document.addEventListener("DOMContentLoaded", function () {
           body: JSON.stringify({ id: variantId, quantity: 1 })
         });
 
-        // Check if this product is Black + Medium
         const selectedOptions = [];
         popup.querySelectorAll(".option-group").forEach(group => {
           const radio = group.querySelector("input[type='radio']:checked");
@@ -218,8 +217,7 @@ document.addEventListener("DOMContentLoaded", function () {
           }
         });
 
-        if (selectedOptions.includes("Black") && selectedOptions.includes("Medium") && Freeprdid) {
-          // Add free product
+        if (selectedOptions.includes("Black") && selectedOptions.includes("M") && Freeprdid) {
           await fetch("/cart/add.js", {
             method: "POST",
             headers: { "Content-Type": "application/json" },
