@@ -25,6 +25,20 @@
                     {% for block in section.blocks %}
                         {% assign product = block.settings.product %}
                         <div class="main__block--wrapper--product">
+                            <style>
+                                .popup__btn-main.btn--{{ block.id }} {
+                                  top:{{ block.settings.position-top }}%;
+                                  left:{{ block.settings.position-left }}%;
+                                }
+
+                              @media screen and (max-width: 768px){
+                    
+                                .popup__btn-main.btn--{{ block.id }} {
+                                  top:{{ block.settings.position-top-mobile }}%;
+                                  left:{{ block.settings.position-left-mobile }}%;
+                                }
+                               }
+                            </style>
                             <div class="product__block--inner">
                                {% if block.settings.product-image != blank %}
                                    <img src="{{ block.settings.product-image | image_url }}" alt="product-image" height="{{ block.settings.product-image.height }}" width="{{ block.settings.product-image.width }}">
@@ -32,7 +46,7 @@
                                    <img src="{{ product.featured_image | image_url }}" alt="product-image" height="{{ product.featured_image.height }}" width="{{ product.featured_image.width }}">
                                 {% endif %}
 
-                                <div class="popup__btn-main">
+                                <div class="popup__btn-main btn--{{ block.id }}">
 
                                     <svg width="10" height="10" viewBox="0 0 10 10" fill="none" xmlns="http://www.w3.org/2000/svg">
                                     <path d="M4.98047 0.75V9.21154" stroke="black" stroke-width="1.5" stroke-linecap="square" stroke-linejoin="round"/>
