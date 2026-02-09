@@ -24,7 +24,7 @@
                 <div class="inner__product--grid--v2">
                     {% for block in section.blocks %}
                         {% assign product = block.settings.product %}
-                        <div class="main__block--wrapper--product">
+                        <div class="main__block--wrapper--product"   {{ block.shopify_attributes }}>
                             <style>
                                 .popup__btn-main.btn--{{ block.id }} {
                                   top:{{ block.settings.position-top }}%;
