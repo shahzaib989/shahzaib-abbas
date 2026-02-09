@@ -47,14 +47,29 @@
     transform: rotate(45deg);
 }
 
-.popup__wrpper--main {
-    display:none;
-}
-
 .popup__wrpper--main.active{
     display:flex;
 }
 
+.popup__wrpper--main {
+    position: fixed;
+    top: 0px;
+    left: 0px;
+    height: 100%;
+    width: 100%;
+    background: #00000054;
+    z-index: 4;
+    display:none;
+    align-items: center;
+    justify-content: center;
+}
+
+.popup--inner {
+    width: 311px;
+    height: 447px;
+    background: white;
+    overflow: auto;
+}
 
 @media screen and (max-width: 768px){
     .inner__product--grid--v2 {
