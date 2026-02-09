@@ -3,12 +3,12 @@ document.addEventListener("DOMContentLoaded", function () {
   var allBtnsPopup = document.querySelectorAll(".popup__btn-main");
   var popupMain = document.querySelector("#popup--info");
   var closeBtn = document.querySelector(".popupClosebtn");
-  var bodyMain=document.querySelector("body");
+  var docbodym= document.querySelector("body");
 
 
   function openPopup() {
     if (popupMain) {
-        console.log(bodyMain)
+      console.log(docbodym)
       popupMain.classList.add("active");
       bodyMain.style.overflow="hidden";
     }
@@ -36,8 +36,9 @@ document.addEventListener("DOMContentLoaded", function () {
 
     });
 
-   //closebtn
-
+   
+   
+    //closebtn
     closeBtn.addEventListener("click", function(){
       closePopup();
     })
