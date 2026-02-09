@@ -3,7 +3,7 @@ document.addEventListener("DOMContentLoaded", function(){
    var mainBody=document.querySelector("body");
    var popupMain=document.querySelector("#popup--info")
    var closebtn=document.querySelector("")
-  console.log(allBtnsPopup)
+
 function openPopup(){
   popupMain.classList.add("active");   
 }
@@ -15,6 +15,7 @@ function closePopup(){
 
 //adding eventlisteners to buttons
    allBtnsPopup.forEach(function(btn){
+      console.log(allBtnsPopup)
     btn.addEventListener("click", function(e){
         console.log("thisis")
     var productOpened=e.currentTarget;
