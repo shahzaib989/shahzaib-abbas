@@ -68,7 +68,7 @@
 
 .popup--inner {
     position: relative;
-    padding: 30px 20px;
+    padding: 30px 18px;
     box-shadow: 0px 2px 4px 0px #00000033;
     width: 311px;
     height: 447px;
@@ -85,6 +85,17 @@
 .popupClosebtn {
     cursor:pointer;
 }
+
+.product__image--main img{
+    width: 100%;
+    aspect-ratio: 1 / 1.17;
+    object-fit: cover;
+}
+
+.product__image--main {
+    max-width: 120px;
+}
+
 
 @media screen and (max-width: 768px){
     .inner__product--grid--v2 {
