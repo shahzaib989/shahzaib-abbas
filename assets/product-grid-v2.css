@@ -205,7 +205,7 @@ button.add-to-cartbutton:hover svg{
     color: #333333;
 }
 
-.color-option radio{
+.color-option input{
     display:none;
 }
 
