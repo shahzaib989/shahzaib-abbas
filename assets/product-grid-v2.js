@@ -9,38 +9,12 @@ document.addEventListener("DOMContentLoaded", function () {
 
   let currentProduct = null;
 
-
-  const loader = document.createElement("div");
-  loader.className = "popup-loader";
-  loader.innerHTML = `<div class="spinner"></div>`;
-  loader.style.position = "fixed";
-  loader.style.top = "0";
-  loader.style.left = "0";
-  loader.style.width = "100%";
-  loader.style.height = "100%";
-  loader.style.background = "rgba(255,255,255,0.7)";
-  loader.style.display = "flex";
-  loader.style.alignItems = "center";
-  loader.style.justifyContent = "center";
-  loader.style.zIndex = "9999";
-  loader.style.display = "none";
-  document.body.appendChild(loader);
-
-  // Loader helper
-  function showLoader() { loader.style.display = "flex"; }
-  function hideLoader() { loader.style.display = "none"; }
-
   // Open / Close Popup
-
   function openPopup() {
-    showLoader(); // Show loader when opening popup
-    setTimeout(() => {
-      if (popupMain) {
-        popupMain.classList.add("active");
-        docBody.style.overflow = "hidden";
-      }
-      hideLoader(); // Hide loader after popup appears
-    }, 300); // small delay to simulate loading
+    if (popupMain) {
+      popupMain.classList.add("active");
+      docBody.style.overflow = "hidden";
+    }
   }
 
   function closePopup() {
@@ -87,14 +61,14 @@ document.addEventListener("DOMContentLoaded", function () {
 
         variantHtml += `
           <div class="option-group select-group" data-index="${index}">
-            <div class="option-name">${option.name} </div>
+            <div class="option-name">${option.name}</div>
             <div class="option__main--wrapper custom-select">
               <div class="main__dropdown">
                 <svg width="15" height="9" viewBox="0 0 15 9" fill="none" xmlns="http://www.w3.org/2000/svg">
                   <path d="M1.06055 1.06067L7.06055 7.06067L13.0605 1.06067" stroke="black" stroke-width="1.5" stroke-linecap="square"/>
-                </svg> 
+                </svg>
               </div>
-              <div class="select-trigger">${option.values[0]} </div>
+              <div class="select-trigger">${option.values[0]}</div>
               <ul class="select-options">
                 ${optionsList}
               </ul>
@@ -125,6 +99,7 @@ document.addEventListener("DOMContentLoaded", function () {
         <div class="add__to--cartbtn">
           <button type="button" class="add-to-cartbutton" data-var="${firstVariant.id}">
             Add to cart
+            <span class="btn-loader" style="display:none;"></span>
           </button>
         </div>
       </div>
@@ -137,17 +112,22 @@ document.addEventListener("DOMContentLoaded", function () {
   }
 
   // Fetch Product by Handle
-  async function renderPrd(handle) {
+  async function renderPrd(handle, button) {
     if (!handle) return;
-    showLoader(); // show loader until popup builds
+
+    const btnLoader = button.querySelector(".btn-loader");
+    btnLoader.style.display = "inline-block"; // show loader in button
+    button.disabled = true;
+
     try {
       const res = await fetch(`/products/${handle}.js`);
       const product = await res.json();
       buildProduct(product);
-      hideLoader();
     } catch (err) {
       console.error("Product fetch failed", err);
-      hideLoader();
+    } finally {
+      btnLoader.style.display = "none"; // hide loader
+      button.disabled = false;
     }
   }
 
@@ -155,9 +135,11 @@ document.addEventListener("DOMContentLoaded", function () {
   function initVariantEvents(product) {
     const popup = contentPopup;
     const addBtn = popup.querySelector(".add-to-cartbutton");
+    const addBtnLoader = addBtn.querySelector(".btn-loader");
     const priceBox = popup.querySelector(".product-price--main");
     const image = popup.querySelector(".product__image--main img");
 
+    // Color options
     popup.querySelectorAll(".color-option input").forEach(radio => {
       radio.addEventListener("change", () => {
         popup.querySelectorAll(".color-option").forEach(label => {
@@ -167,9 +149,7 @@ document.addEventListener("DOMContentLoaded", function () {
         updateVariant();
       });
 
-      if (radio.checked) {
-        radio.dispatchEvent(new Event("change"));
-      }
+      if (radio.checked) radio.dispatchEvent(new Event("change"));
     });
 
     // Custom selects
@@ -196,9 +176,15 @@ document.addEventListener("DOMContentLoaded", function () {
 
     // Add to Cart click
     addBtn.addEventListener("click", async () => {
-      showLoader(); // show loader while adding to cart
+      addBtnLoader.style.display = "inline-block"; // show loader
+      addBtn.disabled = true;
+
       const variantId = addBtn.dataset.var;
-      if (!variantId) { hideLoader(); return; }
+      if (!variantId) {
+        addBtnLoader.style.display = "none";
+        addBtn.disabled = false;
+        return;
+      }
 
       try {
         await fetch("/cart/add.js", {
@@ -207,6 +193,7 @@ document.addEventListener("DOMContentLoaded", function () {
           body: JSON.stringify({ id: variantId, quantity: 1 })
         });
 
+        // Check if Black + Medium → add free product
         const selectedOptions = [];
         popup.querySelectorAll(".option-group").forEach(group => {
           const radio = group.querySelector("input[type='radio']:checked");
@@ -230,10 +217,12 @@ document.addEventListener("DOMContentLoaded", function () {
       } catch (err) {
         console.error("Add to cart failed:", err);
       } finally {
-        hideLoader();
+        addBtnLoader.style.display = "none";
+        addBtn.disabled = false;
       }
     });
 
+    // Update variant function
     function updateVariant() {
       const selected = [];
       popup.querySelectorAll(".option-group").forEach((group, index) => {
@@ -260,7 +249,7 @@ document.addEventListener("DOMContentLoaded", function () {
   allBtnsPopup.forEach(btn => {
     btn.addEventListener("click", function () {
       const handleprd = btn.getAttribute("data-handle");
-      renderPrd(handleprd);
+      renderPrd(handleprd, btn);
     });
   });
 

@@ -53,14 +53,13 @@
                                    <img src="{{ product.featured_image | image_url }}" alt="product-image" height="{{ product.featured_image.height }}" width="{{ product.featured_image.width }}">
                                 {% endif %}
 
-                                <div class="popup__btn-main btn--{{ block.id }}" data-handle="{{ product.handle }}">
-
-                                    <svg width="10" height="10" viewBox="0 0 10 10" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                    <path d="M4.98047 0.75V9.21154" stroke="black" stroke-width="1.5" stroke-linecap="square" stroke-linejoin="round"/>
-                                    <path d="M0.75 4.98077H9.21154" stroke="black" stroke-width="1.5" stroke-linecap="square" stroke-linejoin="round"/>
-                                    </svg>
-
-                                </div>
+                               <div class="popup__btn-main btn--{{ block.id }}" data-handle="{{ product.handle }}">
+                               <svg width="10" height="10" viewBox="0 0 10 10" fill="none" xmlns="http://www.w3.org/2000/svg">
+    <path d="M4.98047 0.75V9.21154" stroke="black" stroke-width="1.5" stroke-linecap="square" stroke-linejoin="round"/>
+    <path d="M0.75 4.98077H9.21154" stroke="black" stroke-width="1.5" stroke-linecap="square" stroke-linejoin="round"/>
+  </svg>
+  <span class="btn-loader" style="display:none;"></span>
+</div>
                             </div>
                         </div>
                     {% endfor %}
