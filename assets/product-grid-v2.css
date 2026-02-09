@@ -236,6 +236,7 @@ label.color-option {
     width: 4px;
     height: 100%;
     border-right: 0.5px solid black;
+    display:block!important;
 }
 
 .option-group.color-group .option__main--wrapper input[type="radio"]:checked + label.color-option {
