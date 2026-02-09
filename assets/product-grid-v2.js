@@ -5,7 +5,7 @@ document.addEventListener("DOMContentLoaded", function () {
   const closeBtn = document.querySelector(".popupClosebtn");
   const docBody = document.querySelector("body");
   const contentPopup = document.querySelector(".popupcontent");
-  const Freeprdid = document.querySelector("#popup--info").getAttribute("data-var-free");
+  const Freeprdid = popupMain.getAttribute("data-var-free");
 
   let currentProduct = null;
 
@@ -100,11 +100,11 @@ document.addEventListener("DOMContentLoaded", function () {
           <button type="button" class="add-to-cartbutton" data-var="${firstVariant.id}">
           <div class="add-to-cartcontent">
             Add to cart
-          <svg width="36" height="12" viewBox="0 0 36 12" fill="none" xmlns="http://www.w3.org/2000/svg">
-          <path d="M0.75 4.77295L9.20657e-08 4.77295L-9.20657e-08 6.27295L0.75 6.27295L0.75 4.77295ZM34.9798 6.05328C35.2727 5.76039 35.2727 5.28551 34.9798 4.99262L30.2068 0.21965C29.9139 -0.0732432 29.4391 -0.0732433 29.1462 0.21965C28.8533 0.512544 28.8533 0.987417 29.1462 1.28031L33.3888 5.52295L29.1462 9.76559C28.8533 10.0585 28.8533 10.5334 29.1462 10.8263C29.4391 11.1191 29.9139 11.1191 30.2068 10.8263L34.9798 6.05328ZM0.75 6.27295L34.4495 6.27295L34.4495 4.77295L0.75 4.77295L0.75 6.27295Z" fill="white"/>
-          </svg>
+            <svg width="36" height="12" viewBox="0 0 36 12" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M0.75 4.77295L9.20657e-08 4.77295L-9.20657e-08 6.27295L0.75 6.27295L0.75 4.77295ZM34.9798 6.05328C35.2727 5.76039 35.2727 5.28551 34.9798 4.99262L30.2068 0.21965C29.9139 -0.0732432 29.4391 -0.0732433 29.1462 0.21965C28.8533 0.512544 28.8533 0.987417 29.1462 1.28031L33.3888 5.52295L29.1462 9.76559C28.8533 10.0585 28.8533 10.5334 29.1462 10.8263C29.4391 11.1191 29.9139 11.1191 30.2068 10.8263L34.9798 6.05328ZM0.75 6.27295L34.4495 6.27295L34.4495 4.77295L0.75 4.77295L0.75 6.27295Z" fill="white"/>
+            </svg>
           </div>
-            <span class="btn-loader" style="display:none;"></span>
+          <span class="btn-loader" style="display:none;"></span>
           </button>
         </div>
       </div>
@@ -112,7 +112,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
     contentPopup.innerHTML = popupHtml;
 
-    initVariantEvents(product); // call after building
+    initVariantEvents(product);
     openPopup();
   }
 
@@ -156,14 +156,15 @@ document.addEventListener("DOMContentLoaded", function () {
           const swatch = label.querySelector(".swatch");
 
           if (input.checked) {
-            colorField.style.border = "2px solid black";
-            swatch.style.color = "white";
+            colorField.classList.add("selected");
+            swatch.classList.add("selected");
           } else {
-            colorField.style.border = "1px solid #ccc";
-            swatch.style.color = "black";
+            colorField.classList.remove("selected");
+            swatch.classList.remove("selected");
           }
         });
-        updateVariant(); // recalc variant
+
+        updateVariant(); // ✅ update Add to Cart button
       });
 
       if (radio.checked) radio.dispatchEvent(new Event("change"));
@@ -186,7 +187,7 @@ document.addEventListener("DOMContentLoaded", function () {
           li.classList.add("selected");
 
           select.classList.remove("open");
-          updateVariant(); // recalc variant immediately
+          updateVariant();
         });
       });
     });
