@@ -195,6 +195,16 @@ button.add-to-cartbutton:hover svg{
     flex-direction: column-reverse;
 }
 
+.option-name {
+    font-family: Jost;
+    font-weight: 400;
+    font-style: Regular;
+    font-size: 14px;
+    line-height: 130%;
+    letter-spacing: 0%;
+    color: #333333;
+}
+
 
 @media screen and (max-width: 768px){
     .inner__product--grid--v2 {
