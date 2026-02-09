@@ -70,7 +70,7 @@ document.addEventListener("DOMContentLoaded", function () {
             
 <svg width="15" height="9" viewBox="0 0 15 9" fill="none" xmlns="http://www.w3.org/2000/svg">
 <path d="M1.06055 1.06067L7.06055 7.06067L13.0605 1.06067" stroke="black" stroke-width="1.5" stroke-linecap="square"/>
-</svg>
+</svg> 
 
             </div>
               <div class="select-trigger">${option.values[0]} </div>
