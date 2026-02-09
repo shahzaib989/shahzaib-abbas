@@ -47,6 +47,21 @@ document.addEventListener("DOMContentLoaded", function () {
   //building product in popup 
 
 function buildproduct(product){
+   console.log(product)
+   let variantHtml="";
+
+   product.options.forEach((option, index) => {
+    
+    variantHtml +=`
+    
+    <div class="option-name">${option.name}</div>
+    <div class="option__main--wrapper">
+    </div>
+    `
+
+
+   });
+
   const popupHtml=`
     <div class="popup__inner--main">
       <div class="product--top--data">
