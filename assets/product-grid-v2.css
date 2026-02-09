@@ -151,6 +151,7 @@ button.add-to-cartbutton {
     text-transform: uppercase;
     margin-top: 13px;
     border:unset;
+    cursor: pointer;
 }
 
 button.add-to-cartbutton svg{
