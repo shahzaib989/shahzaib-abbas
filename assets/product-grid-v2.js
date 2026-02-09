@@ -2,7 +2,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
   var allBtnsPopup = document.querySelectorAll(".popup__btn-main");
   var popupMain = document.querySelector("#popup--info");
-  var closeBtn = document.querySelector(".popup__close");
+  var closeBtn = document.querySelector(".popupClosebtn");
 
 
   function openPopup() {
