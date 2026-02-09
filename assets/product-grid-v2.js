@@ -20,6 +20,9 @@ document.addEventListener("DOMContentLoaded", function () {
     }
   }
 
+
+  
+
   async function renderPrd(handle) {
     
     //fetching product
@@ -29,7 +32,8 @@ document.addEventListener("DOMContentLoaded", function () {
     const product = await res.json();
     
     var currentProduct=product;
-    console.log(currentProduct);
+    buildproduct(product);
+    openPopup();
    }
    catch (err){
     console.error("Product Fetch Failed", err)
@@ -38,6 +42,40 @@ document.addEventListener("DOMContentLoaded", function () {
 
 
   }
+
+
+  //building product in popup 
+
+function buildproduct(product){
+  const popupHtml=`
+    <div class="popup__inner--main">
+      <div class="product--top--data">
+        <div class="product__image--main">
+          <img src="${product.featured_image}" alt="product-img-popup>
+        </div>
+        <div class="product--info">
+          <div class="product__title--main">
+            ${product.title}
+          </div
+           <div class="product-price--main">
+            ${product.price}
+          </div
+          <div class="product__description--main">
+            ${product.description}
+          </div
+        </div>
+      </div>
+    </div>
+  `;
+   
+  contentPopup.innerHTML = popupHtml;
+
+
+}
+
+
+
+
 
   // Add click on open buttons
   allBtnsPopup.forEach(function (btn) {
@@ -48,7 +86,7 @@ document.addEventListener("DOMContentLoaded", function () {
       var handleprd = productOpened.getAttribute("data-handle");
 
       renderPrd(handleprd);
-      openPopup();
+     
 
     });
 
@@ -66,6 +104,6 @@ document.addEventListener("DOMContentLoaded", function () {
   }
 
 
-  
+
 
 });
