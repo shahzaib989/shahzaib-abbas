@@ -56,13 +56,13 @@ function buildproduct(product){
         <div class="product--info">
           <div class="product__title--main">
             ${product.title}
-          </div
+          </div>
            <div class="product-price--main">
             ${product.price}
           </div
           <div class="product__description--main">
             ${product.description}
-          </div
+          </div>
         </div>
       </div>
     </div>
