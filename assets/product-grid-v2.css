@@ -90,6 +90,7 @@
     width: 100%;
     aspect-ratio: 1 / 1.17;
     object-fit: cover;
+    display:block;
 }
 
 .product__image--main {
@@ -103,10 +104,21 @@
 .product__title--main {
     font-family: Jost;
     font-weight: 300;
-    font-style: Light;
+    line-height:120%;
     font-size: 16px;
     color: #000000;
 }
+
+.product__description--main p{
+    font-family: Jost;
+    font-weight: 300;
+    font-size: 14px;
+    line-height: 110.00000000000001%;
+    letter-spacing: -1%;
+    color: #000000;
+    margin: 0px;
+}
+
 
 @media screen and (max-width: 768px){
     .inner__product--grid--v2 {
