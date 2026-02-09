@@ -150,6 +150,7 @@ button.add-to-cartbutton {
     vertical-align: middle;
     text-transform: uppercase;
     margin-top: 13px;
+    border:unset;
 }
 
 button.add-to-cartbutton svg{
