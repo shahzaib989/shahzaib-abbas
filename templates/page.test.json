@@ -57,8 +57,8 @@
             "product": "blue-silk-tuxedo",
             "position-left": 81,
             "position-top": 49,
-            "position-left-mobile": 0,
-            "position-top-mobile": 0
+            "position-left-mobile": 61,
+            "position-top-mobile": 13
           }
         },
         "product_idFFVw": {
@@ -67,8 +67,8 @@
             "product": "chequered-red-shirt",
             "position-left": 57,
             "position-top": 19,
-            "position-left-mobile": 0,
-            "position-top-mobile": 0
+            "position-left-mobile": 61,
+            "position-top-mobile": 13
           }
         },
         "product_Qf8c84": {
@@ -77,8 +77,8 @@
             "product": "classic-leather-jacket",
             "position-left": 67,
             "position-top": 15,
-            "position-left-mobile": 0,
-            "position-top-mobile": 0
+            "position-left-mobile": 61,
+            "position-top-mobile": 13
           }
         },
         "product_4hibBR": {
@@ -87,8 +87,8 @@
             "product": "classic-varsity-top",
             "position-left": 48,
             "position-top": 25,
-            "position-left-mobile": 0,
-            "position-top-mobile": 0
+            "position-left-mobile": 61,
+            "position-top-mobile": 13
           }
         },
         "product_YzjpXU": {
@@ -98,8 +98,8 @@
             "product-image": "shopify://shop_images/image_827.png",
             "position-left": 76,
             "position-top": 37,
-            "position-left-mobile": 0,
-            "position-top-mobile": 0
+            "position-left-mobile": 61,
+            "position-top-mobile": 13
           }
         }
       },
