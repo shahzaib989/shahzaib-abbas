@@ -37,10 +37,20 @@
         "header-bottom-text": "<p>SUSTAINABLE, ETHICALLY MADE CLOTHES IN SIZES XXS TO 6XL</p>",
         "header-bottom-text-mobile": "<p>SUSTAINABLE, ETHICALLY MADE ACTIVEWEAR</p>"
       }
+    },
+    "product_grid_v2_q8bxzP": {
+      "type": "product-grid-v2",
+      "name": "product-grid-v2",
+      "settings": {
+        "padding-top": 60,
+        "padding-bottom": 60,
+        "heading": "<h2>Tisso vison in the wild</h2>"
+      }
     }
   },
   "order": [
     "main",
-    "banner_v2_3HjiMR"
+    "banner_v2_3HjiMR",
+    "product_grid_v2_q8bxzP"
   ]
 }
