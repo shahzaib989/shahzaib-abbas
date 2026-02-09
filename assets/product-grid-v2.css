@@ -238,7 +238,7 @@ label.color-option {
     border-right: 0.5px solid black;
 }
 
-.option-group.color-group .option__main--wrapper input[type="radio"]:checked + .swatch {
+.option-group.color-group .option__main--wrapper input[type="radio"]:checked + label {
   background: #000000;
   color: #fff;
   border-color: #000;
