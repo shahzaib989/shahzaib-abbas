@@ -150,6 +150,7 @@ document.addEventListener("DOMContentLoaded", function () {
     // --- Color radios ---
     popup.querySelectorAll(".color-option input").forEach(radio => {
       radio.addEventListener("change", () => {
+        console.log("thisisi")
         popup.querySelectorAll(".color-option").forEach(label => {
           const input = label.querySelector("input");
           const colorField = label.querySelector(".color--field");
@@ -164,7 +165,7 @@ document.addEventListener("DOMContentLoaded", function () {
           }
         });
 
-        updateVariant(); // ✅ update Add to Cart button
+        updateVariant(); 
       });
 
       if (radio.checked) radio.dispatchEvent(new Event("change"));
