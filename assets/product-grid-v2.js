@@ -21,30 +21,7 @@ document.addEventListener("DOMContentLoaded", function () {
   }
 
 
-  
-
-  async function renderPrd(handle) {
-    
-    //fetching product
-   if (!handle) return;
-   try {
-    const res = await fetch (`/products/${handle}.js`);
-    const product = await res.json();
-    
-    var currentProduct=product;
-    buildproduct(product);
-    openPopup();
-   }
-   catch (err){
-    console.error("Product Fetch Failed", err)
-   }
-
-
-
-  }
-
-
-  //building product in popup 
+    //building product in popup 
 
  function buildProduct(product) {
 
@@ -124,6 +101,31 @@ document.addEventListener("DOMContentLoaded", function () {
     // Initialize option events
     initVariantEvents(product);
   }
+
+
+  
+
+  async function renderPrd(handle) {
+    
+    //fetching product
+   if (!handle) return;
+   try {
+    const res = await fetch (`/products/${handle}.js`);
+    const product = await res.json();
+    
+    var currentProduct=product;
+    buildproduct(product);
+    openPopup();
+   }
+   catch (err){
+    console.error("Product Fetch Failed", err)
+   }
+
+
+
+  }
+
+
 
 
 
