@@ -27,6 +27,21 @@
 .product__block--inner {
     position: relative;
 }
+
 .popup__btn-main {
-    position:absolute;
+    position: absolute;
+    height: 22px;
+    width: 22px;
+    background: #F8F8F8E5;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+}
+.popup__btn-main svg{
+    transition: transform 0.3s ease;
+}
+
+.popup__btn-main:hover svg{
+    transform: rotate(45deg);
 }
