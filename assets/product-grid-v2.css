@@ -238,8 +238,10 @@ label.color-option {
     border-right: 0.5px solid black;
 }
 
-.option-group.color-group .option__main--wrapper input[type=radio]:checked  .color-option{
-    background:#000000;
+.option-group.color-group .option__main--wrapper input[type="radio"]:checked + .swatch {
+  background: #000000;
+  color: #fff;
+  border-color: #000;
 }
 
 @media screen and (max-width: 768px){
