@@ -83,6 +83,7 @@
 .popup__btn-main {
     cursor:pointer;
 }
+
 @media screen and (max-width: 768px){
     .inner__product--grid--v2 {
     display: grid;
