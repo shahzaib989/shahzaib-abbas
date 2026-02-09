@@ -46,3 +46,45 @@
 .popup__btn-main:hover svg{
     transform: rotate(45deg);
 }
+
+@media screen and (max-width: 768px){
+    .inner__product--grid--v2 {
+    display: grid;
+    grid-template-columns: repeat(2,1fr);
+    gap: 4px;
+}
+.main__grid--productsv2 {
+    margin-top: 20px;
+}
+.heading__grid--v2 h2 {
+    font-family: Lustria;
+    font-weight: 400;
+    font-size: 24px;
+    line-height: 120%;
+    margin: 0;
+    text-align: center;
+    color: #000000;
+}
+.product__block--inner img {
+    width: 100%;
+    height: auto;
+    aspect-ratio: 1/1.1;
+    object-fit: cover;
+    display: block;
+}
+.popup__btn-main {
+    position: absolute;
+    height: 15px;
+    width: 15px;
+    background: #f8f8f8e5;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    cursor: pointer;
+}
+.popup__btn-main svg {
+    height: 6px;
+    width: 6px;
+}
+}
