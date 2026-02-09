@@ -8,9 +8,14 @@ document.addEventListener("DOMContentLoaded", function(){
 
 
 
-
-   allBtnsPopup.addEventListener("click", function(){
+   allBtnsPopup.forEach(function(btn){
+    btn.addEventListener("click", function(e){
+    var productOpened=e.currentTarget;
+    var handleprd=productOpened.getAttribute("data-handle");
+     console.log(handleprd);
      console.log("clicked");
      console.log(body);
    })
+   })
+   
 })
