@@ -16,6 +16,7 @@ function closePopup(){
 //adding eventlisteners to buttons
    allBtnsPopup.forEach(function(btn){
     btn.addEventListener("click", function(e){
+        console.log("thisis")
     var productOpened=e.currentTarget;
     var handleprd=productOpened.getAttribute("data-handle");
      openPopup();
