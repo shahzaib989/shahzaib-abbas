@@ -243,6 +243,21 @@ label.color-option {
   color: #fff;
 }
 
+.color-option input:checked + label .color--field {
+  background: black !important;
+}
+
+.color-option input:checked + label .swatch {
+  color: white !important;
+}
+
+
+.custom-select li.selected {
+  background: black;
+  color: white;
+}
+
+
 @media screen and (max-width: 768px){
     .inner__product--grid--v2 {
     display: grid;

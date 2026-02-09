@@ -39,14 +39,11 @@ document.addEventListener("DOMContentLoaded", function () {
 
       // Color → radios
       if (optionName === "color" || optionName === "colour") {
-        const radios = option.values.map(value => `
-          <input type="radio" name="option-${index}" value="${value}" style="display:none;">
+        const radios = option.values.map((value, i) => `
+          <input type="radio" name="option-${index}" value="${value}" style="display:none;" ${i === 0 ? "checked" : ""}>
           <label class="color-option">
-            <div class="color--field" style="background:${value};">
-            
-            </div>
+            <div class="color--field" style="background:${value};"></div>
             <span class="swatch">${value}</span>
-            
           </label>
         `).join("");
 
@@ -61,19 +58,19 @@ document.addEventListener("DOMContentLoaded", function () {
       }
       // Other options → custom select
       else {
-        const optionsList = option.values.map(value => `
-          <li data-value="${value}">${value}</li>
+        const optionsList = option.values.map((value, i) => `
+          <li data-value="${value}" ${i === 0 ? "class='selected'" : ""}>${value}</li>
         `).join("");
 
         variantHtml += `
           <div class="option-group select-group" data-index="${index}">
             <div class="option-name">${option.name}</div>
             <div class="option__main--wrapper custom-select">
-              <div class="select-trigger">Select ${option.name}</div>
+              <div class="select-trigger">${option.values[0]}</div>
               <ul class="select-options">
                 ${optionsList}
               </ul>
-              <input type="hidden" name="option-${index}">
+              <input type="hidden" name="option-${index}" value="${option.values[0]}">
             </div>
           </div>
         `;
@@ -136,7 +133,19 @@ document.addEventListener("DOMContentLoaded", function () {
 
     // Color radios
     popup.querySelectorAll(".color-option input").forEach(radio => {
-      radio.addEventListener("change", updateVariant);
+      radio.addEventListener("change", () => {
+        // update styles
+        popup.querySelectorAll(".color-option").forEach(label => {
+          label.querySelector(".color--field").style.background = label.querySelector("input").checked ? "black" : label.querySelector("input").value;
+          label.querySelector(".swatch").style.color = label.querySelector("input").checked ? "white" : "black";
+        });
+        updateVariant();
+      });
+
+      // Initialize color style
+      if (radio.checked) {
+        radio.dispatchEvent(new Event("change"));
+      }
     });
 
     // Custom selects
@@ -151,6 +160,11 @@ document.addEventListener("DOMContentLoaded", function () {
         li.addEventListener("click", () => {
           hiddenInput.value = li.dataset.value;
           trigger.textContent = li.dataset.value;
+
+          // Remove selected class from all
+          options.forEach(o => o.classList.remove("selected"));
+          li.classList.add("selected"); // Add to clicked
+
           select.classList.remove("open");
           updateVariant();
         });
@@ -177,7 +191,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
 
     // Update Variant Function
- 
+
     function updateVariant() {
       const selected = [];
 
@@ -205,7 +219,7 @@ document.addEventListener("DOMContentLoaded", function () {
   // Attach click events to buttons
 
   allBtnsPopup.forEach(btn => {
-    btn.addEventListener("click", function (e) {
+    btn.addEventListener("click", function () {
       const handleprd = btn.getAttribute("data-handle");
       renderPrd(handleprd);
     });
