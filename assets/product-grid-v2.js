@@ -1,21 +1,30 @@
 document.addEventListener("DOMContentLoaded", function(){
    var allBtnsPopup=document.querySelectorAll(".popup__btn-main");
    var mainBody=document.querySelector("body");
+   var popupMain=document.querySelector("#popup--info")
+   var closebtn=document.querySelector("")
+
+function openPopup(){
+  popupMain.classList.add("active");   
+}
+
+function closePopup(){
+  popupMain.classList.remove("active");   
+}
 
 
-
-
-
-
-
+//adding eventlisteners to buttons
    allBtnsPopup.forEach(function(btn){
     btn.addEventListener("click", function(e){
     var productOpened=e.currentTarget;
     var handleprd=productOpened.getAttribute("data-handle");
-     console.log(handleprd);
-     console.log("clicked");
-     console.log(body);
-   })
+     openPopup();
+     })
    })
    
+
+
+
+
+
 })
