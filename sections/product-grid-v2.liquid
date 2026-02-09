@@ -69,7 +69,7 @@
     </div>
 </div>
 
-<div class="popup__wrpper--main" id="popup--info" data-var-free="{{ section.settings.free-product.selected_or_first_available_variant.id }}">
+<div class="popup__wrpper--main" id="popup--info" data-var-free="{{ section.settings.freevariant_id }}">
     <div class="popup--inner">
         <div class="popupClosebtn">
             <svg width="17" height="17" viewBox="0 0 17 17" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -112,9 +112,9 @@
     "id":"heading"
   },
   {
-    "type":"product",
-    "label":"Free Product",
-    "id":"free-product"
+      "type": "number",
+      "id": "freevariant_id",
+      "label": "Enter Free Variant ID"
   }
   ],
   "blocks": [
