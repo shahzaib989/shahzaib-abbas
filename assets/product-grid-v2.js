@@ -4,7 +4,7 @@ document.addEventListener("DOMContentLoaded", function () {
   var popupMain = document.querySelector("#popup--info");
   var closeBtn = document.querySelector(".popupClosebtn");
   var docbodym= document.querySelector("body");
-
+  var contentPopup=document.querySelector(".popupcontent");
 
   function openPopup() {
     if (popupMain) {
@@ -21,6 +21,9 @@ document.addEventListener("DOMContentLoaded", function () {
     }
   }
 
+  async function renderPrd(handle) {
+     console.log(handle);
+  }
 
   // Add click on open buttons
   allBtnsPopup.forEach(function (btn) {
@@ -31,7 +34,7 @@ document.addEventListener("DOMContentLoaded", function () {
       var handleprd = productOpened.getAttribute("data-handle");
 
       console.log("Handle:", handleprd);
-
+      renderPrd(handleprd);
       openPopup();
 
     });
