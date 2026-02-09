@@ -205,6 +205,10 @@ button.add-to-cartbutton:hover svg{
     color: #333333;
 }
 
+.color-option radio{
+    display:none;
+}
+
 
 @media screen and (max-width: 768px){
     .inner__product--grid--v2 {
