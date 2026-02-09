@@ -5,20 +5,42 @@ document.addEventListener("DOMContentLoaded", function () {
   const closeBtn = document.querySelector(".popupClosebtn");
   const docBody = document.querySelector("body");
   const contentPopup = document.querySelector(".popupcontent");
-  const Freeprdid=document.querySelector("#popup--info").getAttribute("data-var-free");
+  const Freeprdid = document.querySelector("#popup--info").getAttribute("data-var-free");
 
-
-  console.log(Freeprdid);
   let currentProduct = null;
 
+  // Create loader element
+  const loader = document.createElement("div");
+  loader.className = "popup-loader";
+  loader.innerHTML = `<div class="spinner"></div>`;
+  loader.style.position = "fixed";
+  loader.style.top = "0";
+  loader.style.left = "0";
+  loader.style.width = "100%";
+  loader.style.height = "100%";
+  loader.style.background = "rgba(255,255,255,0.7)";
+  loader.style.display = "flex";
+  loader.style.alignItems = "center";
+  loader.style.justifyContent = "center";
+  loader.style.zIndex = "9999";
+  loader.style.display = "none";
+  document.body.appendChild(loader);
+
+  // Loader helper
+  function showLoader() { loader.style.display = "flex"; }
+  function hideLoader() { loader.style.display = "none"; }
 
   // Open / Close Popup
- 
+
   function openPopup() {
-    if (popupMain) {
-      popupMain.classList.add("active");
-      docBody.style.overflow = "hidden";
-    }
+    showLoader(); // Show loader when opening popup
+    setTimeout(() => {
+      if (popupMain) {
+        popupMain.classList.add("active");
+        docBody.style.overflow = "hidden";
+      }
+      hideLoader(); // Hide loader after popup appears
+    }, 300); // small delay to simulate loading
   }
 
   function closePopup() {
@@ -29,9 +51,7 @@ document.addEventListener("DOMContentLoaded", function () {
     }
   }
 
-
   // Build Product Popup
-
   function buildProduct(product) {
     currentProduct = product;
 
@@ -69,13 +89,11 @@ document.addEventListener("DOMContentLoaded", function () {
           <div class="option-group select-group" data-index="${index}">
             <div class="option-name">${option.name} </div>
             <div class="option__main--wrapper custom-select">
-            <div class="main__dropdown">
-            
-<svg width="15" height="9" viewBox="0 0 15 9" fill="none" xmlns="http://www.w3.org/2000/svg">
-<path d="M1.06055 1.06067L7.06055 7.06067L13.0605 1.06067" stroke="black" stroke-width="1.5" stroke-linecap="square"/>
-</svg> 
-
-            </div>
+              <div class="main__dropdown">
+                <svg width="15" height="9" viewBox="0 0 15 9" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <path d="M1.06055 1.06067L7.06055 7.06067L13.0605 1.06067" stroke="black" stroke-width="1.5" stroke-linecap="square"/>
+                </svg> 
+              </div>
               <div class="select-trigger">${option.values[0]} </div>
               <ul class="select-options">
                 ${optionsList}
@@ -118,23 +136,22 @@ document.addEventListener("DOMContentLoaded", function () {
     openPopup();
   }
 
-
   // Fetch Product by Handle
-
   async function renderPrd(handle) {
     if (!handle) return;
+    showLoader(); // show loader until popup builds
     try {
       const res = await fetch(`/products/${handle}.js`);
       const product = await res.json();
       buildProduct(product);
+      hideLoader();
     } catch (err) {
       console.error("Product fetch failed", err);
+      hideLoader();
     }
   }
 
-
   // Variant Selection & Add to Cart
-
   function initVariantEvents(product) {
     const popup = contentPopup;
     const addBtn = popup.querySelector(".add-to-cartbutton");
@@ -150,7 +167,6 @@ document.addEventListener("DOMContentLoaded", function () {
         updateVariant();
       });
 
-      // Initialize color style
       if (radio.checked) {
         radio.dispatchEvent(new Event("change"));
       }
@@ -169,9 +185,8 @@ document.addEventListener("DOMContentLoaded", function () {
           hiddenInput.value = li.dataset.value;
           trigger.textContent = li.dataset.value;
 
-          // Remove selected class from all
           options.forEach(o => o.classList.remove("selected"));
-          li.classList.add("selected"); // Add to clicked
+          li.classList.add("selected");
 
           select.classList.remove("open");
           updateVariant();
@@ -181,8 +196,9 @@ document.addEventListener("DOMContentLoaded", function () {
 
     // Add to Cart click
     addBtn.addEventListener("click", async () => {
+      showLoader(); // show loader while adding to cart
       const variantId = addBtn.dataset.var;
-      if (!variantId) return;
+      if (!variantId) { hideLoader(); return; }
 
       try {
         await fetch("/cart/add.js", {
@@ -190,19 +206,38 @@ document.addEventListener("DOMContentLoaded", function () {
           headers: { "Content-Type": "application/json" },
           body: JSON.stringify({ id: variantId, quantity: 1 })
         });
+
+        // Check if this product is Black + Medium
+        const selectedOptions = [];
+        popup.querySelectorAll(".option-group").forEach(group => {
+          const radio = group.querySelector("input[type='radio']:checked");
+          if (radio) selectedOptions.push(radio.value);
+          else {
+            const hidden = group.querySelector("input[type='hidden']");
+            if (hidden && hidden.value) selectedOptions.push(hidden.value);
+          }
+        });
+
+        if (selectedOptions.includes("Black") && selectedOptions.includes("Medium") && Freeprdid) {
+          // Add free product
+          await fetch("/cart/add.js", {
+            method: "POST",
+            headers: { "Content-Type": "application/json" },
+            body: JSON.stringify({ id: Freeprdid, quantity: 1 })
+          });
+        }
+
         alert("Added to cart!");
         closePopup();
       } catch (err) {
         console.error("Add to cart failed:", err);
+      } finally {
+        hideLoader();
       }
     });
 
-
-    // Update Variant Function
-
     function updateVariant() {
       const selected = [];
-
       popup.querySelectorAll(".option-group").forEach((group, index) => {
         const radio = group.querySelector("input[type='radio']:checked");
         if (radio) { selected[index] = radio.value; return; }
@@ -223,9 +258,7 @@ document.addEventListener("DOMContentLoaded", function () {
     }
   }
 
-
   // Attach click events to buttons
-
   allBtnsPopup.forEach(btn => {
     btn.addEventListener("click", function () {
       const handleprd = btn.getAttribute("data-handle");
@@ -233,7 +266,6 @@ document.addEventListener("DOMContentLoaded", function () {
     });
   });
 
-  // Close button
   if (closeBtn) {
     closeBtn.addEventListener("click", closePopup);
   }
