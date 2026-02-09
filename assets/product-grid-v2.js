@@ -1,29 +1,36 @@
 document.addEventListener("DOMContentLoaded", function () {
 
-  var allBtnsPopup = document.querySelectorAll(".popup__btn-main");
-  var popupMain = document.querySelector("#popup--info");
-  var closeBtn = document.querySelector(".popupClosebtn");
-  var docbodym= document.querySelector("body");
-  var contentPopup=document.querySelector(".popupcontent");
+  const allBtnsPopup = document.querySelectorAll(".popup__btn-main");
+  const popupMain = document.querySelector("#popup--info");
+  const closeBtn = document.querySelector(".popupClosebtn");
+  const docBody = document.querySelector("body");
+  const contentPopup = document.querySelector(".popupcontent");
+
+  let currentProduct = null;
+
+
+  // Open / Close Popup
 
   function openPopup() {
     if (popupMain) {
       popupMain.classList.add("active");
-      docbodym.style.overflow="hidden";
+      docBody.style.overflow = "hidden";
     }
   }
 
   function closePopup() {
     if (popupMain) {
       popupMain.classList.remove("active");
-       docbodym.style.overflow="unset";
+      docBody.style.overflow = "unset";
+      contentPopup.innerHTML = "";
     }
   }
 
 
-    //building product in popup 
+  // Build Product Popup
 
- function buildProduct(product) {
+  function buildProduct(product) {
+    currentProduct = product;
 
     let variantHtml = "";
 
@@ -69,7 +76,6 @@ document.addEventListener("DOMContentLoaded", function () {
       }
     });
 
-    // Build popup HTML
     const firstVariant = product.variants.find(v => v.available) || product.variants[0];
 
     const popupHtml = `
@@ -98,39 +104,28 @@ document.addEventListener("DOMContentLoaded", function () {
 
     contentPopup.innerHTML = popupHtml;
 
-    // Initialize option events
     initVariantEvents(product);
+    openPopup();
   }
 
 
-  
+  // Fetch Product by Handle
 
   async function renderPrd(handle) {
-    
-    //fetching product
-   if (!handle) return;
-   try {
-    const res = await fetch (`/products/${handle}.js`);
-    const product = await res.json();
-    
-    var currentProduct=product;
-    buildProduct(product);
-    openPopup();
-   }
-   catch (err){
-    console.error("Product Fetch Failed", err)
-   }
-
-
-
+    if (!handle) return;
+    try {
+      const res = await fetch(`/products/${handle}.js`);
+      const product = await res.json();
+      buildProduct(product);
+    } catch (err) {
+      console.error("Product fetch failed", err);
+    }
   }
 
 
+  // Variant Selection & Add to Cart
 
-
-
-
-   function initVariantEvents(product) {
+  function initVariantEvents(product) {
     const popup = contentPopup;
     const addBtn = popup.querySelector(".add-to-cartbutton");
     const priceBox = popup.querySelector(".product-price--main");
@@ -147,10 +142,8 @@ document.addEventListener("DOMContentLoaded", function () {
       const options = select.querySelectorAll("li");
       const hiddenInput = select.querySelector("input[type='hidden']");
 
-      // Open/close dropdown
       trigger.addEventListener("click", () => select.classList.toggle("open"));
 
-      // Select option
       options.forEach(li => {
         li.addEventListener("click", () => {
           hiddenInput.value = li.dataset.value;
@@ -179,8 +172,9 @@ document.addEventListener("DOMContentLoaded", function () {
       }
     });
 
-    //update-variant
-    
+
+    // Update Variant Function
+ 
     function updateVariant() {
       const selected = [];
 
@@ -198,50 +192,25 @@ document.addEventListener("DOMContentLoaded", function () {
 
       if (!variant) return;
 
-      // Update Add to Cart button
       addBtn.dataset.var = variant.id;
-
-      // Update price
       priceBox.textContent = `$${(variant.price / 100).toFixed(2)}`;
-
-      // Update image if available
-      if (variant.featured_image) {
-        image.src = variant.featured_image.src || variant.featured_image;
-      }
+      if (variant.featured_image) image.src = variant.featured_image.src || variant.featured_image;
     }
   }
 
 
+  // Attach click events to buttons
 
-
-
-  // Add click on open buttons
-  allBtnsPopup.forEach(function (btn) {
-
+  allBtnsPopup.forEach(btn => {
     btn.addEventListener("click", function (e) {
-
-      var productOpened = e.currentTarget;
-      var handleprd = productOpened.getAttribute("data-handle");
-
+      const handleprd = btn.getAttribute("data-handle");
       renderPrd(handleprd);
-     
-
     });
-
-   
-   
-
   });
 
-
-//closebtn
+  // Close button
   if (closeBtn) {
-    closeBtn.addEventListener("click", function () {
-      closePopup();
-    });
+    closeBtn.addEventListener("click", closePopup);
   }
-
-
-
 
 });
