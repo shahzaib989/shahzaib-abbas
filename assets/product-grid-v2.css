@@ -156,13 +156,14 @@ button.add-to-cartbutton {
 
 .custom-select {
   position: relative;
-  max-width: 200px;
   margin-bottom: 15px;
+  width:100%;
 }
 .select-trigger {
-  padding: 8px 12px;
-  border: 1px solid #ccc;
-  cursor: pointer;
+    padding: 8px 12px;
+    border: 0.5px solid #000000;
+    cursor: pointer;
+    width: 100%;
 }
 .select-options {
   display: none;
