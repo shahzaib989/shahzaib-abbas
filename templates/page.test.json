@@ -115,7 +115,8 @@
       "settings": {
         "padding-top": 60,
         "padding-bottom": 60,
-        "heading": "<h2>Tisso vison in the wild</h2>"
+        "heading": "<h2>Tisso vison in the wild</h2>",
+        "free-product": "dark-winter-jacket"
       }
     }
   },
