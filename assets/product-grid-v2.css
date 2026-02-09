@@ -170,6 +170,7 @@ button.add-to-cartbutton {
     line-height: 100%;
     letter-spacing: -2%;
     color: #000000;
+    z-index:3;
 }
 
 .custom-select.open .select-options { display: block; }
