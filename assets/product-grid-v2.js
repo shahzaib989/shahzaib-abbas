@@ -51,7 +51,7 @@ function buildproduct(product){
     <div class="popup__inner--main">
       <div class="product--top--data">
         <div class="product__image--main">
-          <img src="${product.featured_image}" alt="product-img-popup>
+          <img src="${product.featured_image}" alt="product-img-popup">
         </div>
         <div class="product--info">
           <div class="product__title--main">
