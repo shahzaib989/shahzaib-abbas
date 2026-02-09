@@ -314,7 +314,7 @@ label.color-option {
     background: black;
 }
 
-.option__main--wrapper.custom-select.open {
+.option__main--wrapper.custom-select.open svg{
 transform: rotate(180deg);
 }
 
