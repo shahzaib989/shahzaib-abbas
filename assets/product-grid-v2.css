@@ -70,6 +70,15 @@
     background: white;
     overflow: auto;
 }
+.popupClosebtn {
+    position: absolute;
+    right: 12px;
+    top: 10px;
+}
+.popup--inner {
+
+    position: relative;
+}
 
 @media screen and (max-width: 768px){
     .inner__product--grid--v2 {
