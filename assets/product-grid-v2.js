@@ -10,14 +10,14 @@ document.addEventListener("DOMContentLoaded", function () {
     if (popupMain) {
       console.log(docbodym)
       popupMain.classList.add("active");
-      bodyMain.style.overflow="hidden";
+      docbodym.style.overflow="hidden";
     }
   }
 
   function closePopup() {
     if (popupMain) {
       popupMain.classList.remove("active");
-       bodyMain.style.overflow="unset";
+       docbodym.style.overflow="unset";
     }
   }
 
