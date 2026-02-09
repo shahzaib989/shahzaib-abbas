@@ -332,6 +332,12 @@ transform: rotate(180deg);
   animation: spin 0.8s linear infinite;
 }
 
+.add-to-cartcontent {
+    display: flex;
+    align-items: center;
+    gap: 13px;
+}
+
 .popup__btn-main  .btn-loader {
   border: 2px solid #f3f3f3;
   border-top: 2px solid #000;

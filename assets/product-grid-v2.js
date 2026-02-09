@@ -188,11 +188,13 @@ document.addEventListener("DOMContentLoaded", function () {
     addBtn.addEventListener("click", async () => {
       addBtnLoader.style.display = "inline-block"; // show loader
       addBtn.disabled = true;
-
+      var contentsadd=document.querySelector(".add-to-cartcontent")
+      contentsadd.style.display="none";
       const variantId = addBtn.dataset.var;
       if (!variantId) {
         addBtnLoader.style.display = "none";
         addBtn.disabled = false;
+        contentsadd.style.display="block";
         return;
       }
 
