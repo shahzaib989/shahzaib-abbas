@@ -314,6 +314,10 @@ label.color-option {
     background: black;
 }
 
+.option__main--wrapper.custom-select.open {
+transform: rotate(180deg);
+}
+
 
 @media screen and (max-width: 768px){
     .inner__product--grid--v2 {
