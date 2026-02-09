@@ -95,7 +95,18 @@
 .product__image--main {
     max-width: 120px;
 }
+.product--top--data {
+    display: flex;
+    gap: 8px;
+}
 
+.product__title--main {
+    font-family: Jost;
+    font-weight: 300;
+    font-style: Light;
+    font-size: 16px;
+    color: #000000;
+}
 
 @media screen and (max-width: 768px){
     .inner__product--grid--v2 {
