@@ -5,7 +5,10 @@ document.addEventListener("DOMContentLoaded", function () {
   const closeBtn = document.querySelector(".popupClosebtn");
   const docBody = document.querySelector("body");
   const contentPopup = document.querySelector(".popupcontent");
+  const Freeprdid=document.querySelector("#popup--info").getAttribute("data-var-free");
 
+
+  console.log(Freeprdid);
   let currentProduct = null;
 
 
@@ -138,10 +141,8 @@ document.addEventListener("DOMContentLoaded", function () {
     const priceBox = popup.querySelector(".product-price--main");
     const image = popup.querySelector(".product__image--main img");
 
-    // Color radios
     popup.querySelectorAll(".color-option input").forEach(radio => {
       radio.addEventListener("change", () => {
-        // update styles
         popup.querySelectorAll(".color-option").forEach(label => {
           label.querySelector(".color--field").style.background = label.querySelector("input").checked ? "black" : label.querySelector("input").value;
           label.querySelector(".swatch").style.color = label.querySelector("input").checked ? "white" : "black";
