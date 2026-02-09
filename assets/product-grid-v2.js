@@ -80,7 +80,6 @@ document.addEventListener("DOMContentLoaded", function () {
 
     const popupHtml = `
       <div class="popup__inner--main">
-        <button class="close-popup">✕</button>
         <div class="product--top--data">
           <div class="product__image--main">
             <img src="${product.featured_image}" alt="product-img-popup">
