@@ -43,9 +43,10 @@ document.addEventListener("DOMContentLoaded", function () {
           <input type="radio" name="option-${index}" value="${value}" style="display:none;>
           <label class="color-option">
             <div class="color--field" style="background:${value};">
-            </div>
-            
+           
+             </div>
             <span class="swatch">${value}</span>
+            
           </label>
         `).join("");
 
