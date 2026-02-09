@@ -64,15 +64,15 @@ document.addEventListener("DOMContentLoaded", function () {
 
         variantHtml += `
           <div class="option-group select-group" data-index="${index}">
-            <div class="option-name">${option.name} <div class="main__dropdown">
+            <div class="option-name">${option.name} </div>
+            <div class="option__main--wrapper custom-select">
+              <div class="select-trigger">${option.values[0]} <div class="main__dropdown">
             
 <svg width="15" height="9" viewBox="0 0 15 9" fill="none" xmlns="http://www.w3.org/2000/svg">
 <path d="M1.06055 1.06067L7.06055 7.06067L13.0605 1.06067" stroke="black" stroke-width="1.5" stroke-linecap="square"/>
 </svg>
 
             </div></div>
-            <div class="option__main--wrapper custom-select">
-              <div class="select-trigger">${option.values[0]}</div>
               <ul class="select-options">
                 ${optionsList}
               </ul>
