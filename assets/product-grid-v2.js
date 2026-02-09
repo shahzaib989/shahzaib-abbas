@@ -223,8 +223,8 @@ document.addEventListener("DOMContentLoaded", function () {
             body: JSON.stringify({ id: Freeprdid, quantity: 1 })
           });
         }
-
-        alert("Added to cart!");
+        
+       window.location.href="/cart";
         closePopup();
       } catch (err) {
         console.error("Add to cart failed:", err);
