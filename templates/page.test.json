@@ -40,6 +40,77 @@
     },
     "product_grid_v2_q8bxzP": {
       "type": "product-grid-v2",
+      "blocks": {
+        "product_wYwA3D": {
+          "type": "product",
+          "settings": {
+            "product": "black-leather-bag",
+            "position-left": 0,
+            "position-top": 0,
+            "position-left-mobile": 0,
+            "position-top-mobile": 0
+          }
+        },
+        "product_i6qj4X": {
+          "type": "product",
+          "settings": {
+            "product": "blue-silk-tuxedo",
+            "position-left": 0,
+            "position-top": 0,
+            "position-left-mobile": 0,
+            "position-top-mobile": 0
+          }
+        },
+        "product_idFFVw": {
+          "type": "product",
+          "settings": {
+            "product": "chequered-red-shirt",
+            "position-left": 0,
+            "position-top": 0,
+            "position-left-mobile": 0,
+            "position-top-mobile": 0
+          }
+        },
+        "product_Qf8c84": {
+          "type": "product",
+          "settings": {
+            "product": "classic-leather-jacket",
+            "position-left": 0,
+            "position-top": 0,
+            "position-left-mobile": 0,
+            "position-top-mobile": 0
+          }
+        },
+        "product_4hibBR": {
+          "type": "product",
+          "settings": {
+            "product": "classic-varsity-top",
+            "position-left": 0,
+            "position-top": 0,
+            "position-left-mobile": 0,
+            "position-top-mobile": 0
+          }
+        },
+        "product_YzjpXU": {
+          "type": "product",
+          "settings": {
+            "product": "dark-denim-top",
+            "product-image": "shopify://shop_images/image_827.png",
+            "position-left": 0,
+            "position-top": 0,
+            "position-left-mobile": 0,
+            "position-top-mobile": 0
+          }
+        }
+      },
+      "block_order": [
+        "product_wYwA3D",
+        "product_i6qj4X",
+        "product_idFFVw",
+        "product_Qf8c84",
+        "product_4hibBR",
+        "product_YzjpXU"
+      ],
       "name": "product-grid-v2",
       "settings": {
         "padding-top": 60,
