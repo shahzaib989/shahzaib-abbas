@@ -55,8 +55,8 @@
           "type": "product",
           "settings": {
             "product": "blue-silk-tuxedo",
-            "position-left": 0,
-            "position-top": 0,
+            "position-left": 81,
+            "position-top": 49,
             "position-left-mobile": 0,
             "position-top-mobile": 0
           }
