@@ -58,7 +58,7 @@ function buildproduct(product){
             ${product.title}
           </div>
            <div class="product-price--main">
-            ${product.price}
+            $${(product.variants[0].price / 100). toFixed(2)}
           </div>
           <div class="product__description--main">
             ${product.description}
