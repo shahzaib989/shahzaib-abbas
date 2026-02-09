@@ -6,11 +6,16 @@
     padding-top:{{ section.settings.padding-top }}px;
     padding-bottom:{{ section.settings.padding-bottom }}px;
     }
+     .container{
+    max-width:1350px;
+    padding:0px 14px;
+    margin:0px auto;
+  }
  </style>
 
 
 <div class="product--grid--v2--wrapper product--grid--{{ section.id }}">
-    <div class="product--grid--inner">
+    <div class="product--grid--inner container">
         <div class="product--grid--main">
             <div class="heading__grid--v2">
                 {{ section.settings.heading }}
