@@ -148,7 +148,7 @@ document.addEventListener("DOMContentLoaded", function () {
     const image = popup.querySelector(".product__image--main img");
 
     // --- Color radios ---
-    popup.querySelectorAll(".color-option input").forEach(radio => {
+    popup.querySelectorAll(".option-group.color-group input").forEach(radio => {
       radio.addEventListener("change", () => {
         console.log("thisisi")
         popup.querySelectorAll(".color-option").forEach(label => {
