@@ -54,19 +54,18 @@ document.addEventListener("DOMContentLoaded", function () {
 
    
    
-    //closebtn
-    closeBtn.addEventListener("click", function(){
-      closePopup();
-    })
 
   });
 
 
-
+//closebtn
   if (closeBtn) {
     closeBtn.addEventListener("click", function () {
       closePopup();
     });
   }
+
+
+  
 
 });
