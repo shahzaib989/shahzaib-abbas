@@ -154,6 +154,34 @@ button.add-to-cartbutton {
     cursor: pointer;
 }
 
+.custom-select {
+  position: relative;
+  max-width: 200px;
+  margin-bottom: 15px;
+}
+.select-trigger {
+  padding: 8px 12px;
+  border: 1px solid #ccc;
+  cursor: pointer;
+}
+.select-options {
+  display: none;
+  position: absolute;
+  background: #fff;
+  width: 100%;
+  border: 1px solid #ccc;
+  z-index: 10;
+  max-height: 150px;
+  overflow-y: auto;
+}
+.custom-select.open .select-options { display: block; }
+.select-options li {
+  padding: 8px;
+  cursor: pointer;
+}
+.select-options li:hover { background: #f5f5f5; }
+
+
 button.add-to-cartbutton svg{
    transition:all 0.3s ease;
 }
