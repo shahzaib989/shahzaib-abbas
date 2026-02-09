@@ -1,32 +1,45 @@
-document.addEventListener("DOMContentLoaded", function(){
-   var allBtnsPopup=document.querySelectorAll(".popup__btn-main");
-   var mainBody=document.querySelector("body");
-   var popupMain=document.querySelector("#popup--info")
-   var closebtn=document.querySelector("")
+document.addEventListener("DOMContentLoaded", function () {
 
-function openPopup(){
-  popupMain.classList.add("active");   
-}
-
-function closePopup(){
-  popupMain.classList.remove("active");   
-}
+  var allBtnsPopup = document.querySelectorAll(".popup__btn-main");
+  var popupMain = document.querySelector("#popup--info");
+  var closeBtn = document.querySelector(".popup__close");
 
 
-//adding eventlisteners to buttons
-   allBtnsPopup.forEach(function(btn){
-      console.log(allBtnsPopup)
-    btn.addEventListener("click", function(e){
-        console.log("thisis")
-    var productOpened=e.currentTarget;
-    var handleprd=productOpened.getAttribute("data-handle");
-     openPopup();
-     })
-   })
-   
+  function openPopup() {
+    if (popupMain) {
+      popupMain.classList.add("active");
+    }
+  }
+
+  function closePopup() {
+    if (popupMain) {
+      popupMain.classList.remove("active");
+    }
+  }
+
+
+  // Add click on open buttons
+  allBtnsPopup.forEach(function (btn) {
+
+    btn.addEventListener("click", function (e) {
+
+      var productOpened = e.currentTarget;
+      var handleprd = productOpened.getAttribute("data-handle");
+
+      console.log("Handle:", handleprd);
+
+      openPopup();
+
+    });
+
+  });
 
 
 
+  if (closeBtn) {
+    closeBtn.addEventListener("click", function () {
+      closePopup();
+    });
+  }
 
-
-})
+});
