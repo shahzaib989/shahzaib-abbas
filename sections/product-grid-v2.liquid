@@ -1,0 +1,142 @@
+{{ 'product-grid-v2.css' | asset_url | stylesheet_tag }}
+ <script src="{{ 'product-grid-v2.js' | asset_url }}" defer="defer"></script>
+
+ <style>
+    .product--grid--v2--wrapper.product--grid--{{ section.id }} {
+    padding-top:{{ section.settings.padding-top }}px;
+    padding-bottom:{{ section.settings.padding-bottom }}px;
+    }
+ </style>
+
+
+<div class="product--grid--v2--wrapper product--grid--{{ section.id }}">
+    <div class="product--grid--inner">
+        <div class="product--grid--main">
+            <div class="heading__grid--v2">
+                {{ section.settings.heading }}
+            </div>
+            <div class="main__grid--productsv2">
+                <div class="inner__product--grid--v2">
+                    {% for block in section.blocks %}
+                        {% assign product = block.settings.product %}
+                        <div class="main__block--wrapper--product">
+                            <div class="product__block--inner">
+                               {% if block.settings.product-image != blank %}
+                                   <img src="{{ block.settings.product-image | image_url }}" alt="product-image" height="{{ block.settings.product-image.height }}" width="{{ block.settings.product-image.width }}">
+                               {% else %}
+                                   <img src="{{ product.featured_image | image_url }}" alt="product-image" height="{{ product.featured_image.height }}" width="{{ product.featured_image.width }}">
+                                {% endif %}
+
+                                <div class="popup__btn-main">
+
+                                    <svg width="10" height="10" viewBox="0 0 10 10" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                    <path d="M4.98047 0.75V9.21154" stroke="black" stroke-width="1.5" stroke-linecap="square" stroke-linejoin="round"/>
+                                    <path d="M0.75 4.98077H9.21154" stroke="black" stroke-width="1.5" stroke-linecap="square" stroke-linejoin="round"/>
+                                    </svg>
+
+                                </div>
+                            </div>
+                        </div>
+                    {% endfor %}
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+{% schema %}
+{
+  "name": "product-grid-v2",
+  "class": "product-grid-v2",
+  "settings": [
+  {
+    "type":"range",
+    "label":"Padding Top",
+    "id":"padding-top",
+    "min": 0,
+    "max":500,
+    "default":0,
+    "step": 5,
+    "unit": "px"
+  },
+  {
+    "type":"range",
+    "label":"Padding Bottom",
+    "id":"padding-bottom",
+    "min": 0,
+    "max":500,
+    "default":0,
+    "step": 5,
+    "unit": "px"
+  },
+  {
+    "type":"richtext",
+    "label":"Heading",
+    "id":"heading"
+  }
+  ],
+  "blocks": [
+    {
+        "type":"product",
+        "name":"product",
+        "settings":[
+        {
+          "type":"product",
+          "label":"Add Product",
+          "id":"product"
+        },
+        {
+          "type":"image_picker",
+          "label":"Add Product Image",
+          "id":"product-image"
+        },
+        {
+          "type":"range",
+          "label":"Position Left Desktop",
+          "id":"position-left",
+          "min": 0,
+          "max":100,
+          "default":0,
+          "step": 1,
+          "unit": "%"
+          },
+          {
+           "type":"range",
+          "label":"Position Top Desktop",
+          "id":"position-top",
+          "min": 0,
+          "max":100,
+          "default":0,
+          "step": 1,
+          "unit": "%"
+          },
+          {
+          "type":"range",
+          "label":"Position Left Mobile",
+          "id":"position-left-mobile",
+          "min": 0,
+          "max":100,
+          "default":0,
+          "step": 1,
+          "unit": "%"
+          },
+          {
+           "type":"range",
+          "label":"Position Top Mobile",
+          "id":"position-top-mobile",
+          "min": 0,
+          "max":100,
+          "default":0,
+          "step": 1,
+          "unit": "%"
+          },
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "product-grid-v2",
+    }
+  ]
+}
+{% endschema %}
