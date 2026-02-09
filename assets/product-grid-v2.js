@@ -8,7 +8,6 @@ document.addEventListener("DOMContentLoaded", function () {
 
   function openPopup() {
     if (popupMain) {
-      console.log(docbodym)
       popupMain.classList.add("active");
       docbodym.style.overflow="hidden";
     }
@@ -22,7 +21,22 @@ document.addEventListener("DOMContentLoaded", function () {
   }
 
   async function renderPrd(handle) {
-     console.log(handle);
+    
+    //fetching product
+   if (!handle) return;
+   try {
+    const res = await fetch (`/products/${handle}.js`);
+    const product = await res.json();
+    
+    var currentProduct=product;
+    console.log(currentProduct);
+   }
+   catch (err){
+    console.error("Product Fetch Failed", err)
+   }
+
+
+
   }
 
   // Add click on open buttons
@@ -33,7 +47,6 @@ document.addEventListener("DOMContentLoaded", function () {
       var productOpened = e.currentTarget;
       var handleprd = productOpened.getAttribute("data-handle");
 
-      console.log("Handle:", handleprd);
       renderPrd(handleprd);
       openPopup();
 
