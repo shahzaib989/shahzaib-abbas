@@ -44,7 +44,7 @@
         "product_wYwA3D": {
           "type": "product",
           "settings": {
-            "product": "",
+            "product": "black-leather-bag",
             "position-left": 0,
             "position-top": 0,
             "position-left-mobile": 0,
@@ -54,7 +54,7 @@
         "product_i6qj4X": {
           "type": "product",
           "settings": {
-            "product": "",
+            "product": "blue-silk-tuxedo",
             "position-left": 0,
             "position-top": 0,
             "position-left-mobile": 0,
@@ -64,7 +64,7 @@
         "product_idFFVw": {
           "type": "product",
           "settings": {
-            "product": "",
+            "product": "chequered-red-shirt",
             "position-left": 0,
             "position-top": 0,
             "position-left-mobile": 0,
@@ -74,7 +74,7 @@
         "product_Qf8c84": {
           "type": "product",
           "settings": {
-            "product": "",
+            "product": "classic-leather-jacket",
             "position-left": 0,
             "position-top": 0,
             "position-left-mobile": 0,
@@ -84,7 +84,7 @@
         "product_4hibBR": {
           "type": "product",
           "settings": {
-            "product": "",
+            "product": "classic-varsity-top",
             "position-left": 0,
             "position-top": 0,
             "position-left-mobile": 0,
@@ -94,7 +94,8 @@
         "product_YzjpXU": {
           "type": "product",
           "settings": {
-            "product": "",
+            "product": "dark-denim-top",
+            "product-image": "shopify://shop_images/image_827.png",
             "position-left": 0,
             "position-top": 0,
             "position-left-mobile": 0,
