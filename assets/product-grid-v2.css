@@ -187,7 +187,11 @@ button.add-to-cartbutton {
   cursor: pointer;
 }
 .select-options li:hover { background: #f5f5f5; }
-
+ul.select-options {
+    list-style: none;
+    padding: 0px;
+    text-align: center;
+}
 
 button.add-to-cartbutton svg{
    transition:all 0.3s ease;
