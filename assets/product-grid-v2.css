@@ -231,6 +231,12 @@ label.color-option {
     border: 0.5px solid #000000;
 }
 
+.color--field {
+    width: 4px;
+    height: 100%;
+    border-right: 0.5px solid black;
+}
+
 
 @media screen and (max-width: 768px){
     .inner__product--grid--v2 {
