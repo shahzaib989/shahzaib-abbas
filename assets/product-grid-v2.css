@@ -229,6 +229,7 @@ label.color-option {
     letter-spacing: -2%;
     text-transform: capitalize;
     border: 0.5px solid #000000;
+    cursor: pointer;
 }
 
 .color--field {
