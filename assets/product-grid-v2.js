@@ -116,7 +116,9 @@ document.addEventListener("DOMContentLoaded", function () {
     if (!handle) return;
 
     const btnLoader = button.querySelector(".btn-loader");
-    btnLoader.style.display = "inline-block"; // show loader in button
+     const btnLoadersvg = button.querySelector("svg");
+    btnLoader.style.display = "inline-block"; 
+    btnLoadersvg.style.display="none";
     button.disabled = true;
 
     try {
@@ -128,6 +130,7 @@ document.addEventListener("DOMContentLoaded", function () {
     } finally {
       btnLoader.style.display = "none"; // hide loader
       button.disabled = false;
+      btnLoadersvg.style.display="block";
     }
   }
 
