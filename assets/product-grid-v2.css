@@ -190,6 +190,11 @@ button.add-to-cartbutton:hover svg{
    transform: translateX(10px);
 }
 
+.popup__variants--main {
+    display: flex;
+    flex-direction: column-reverse;
+}
+
 
 @media screen and (max-width: 768px){
     .inner__product--grid--v2 {
