@@ -150,9 +150,9 @@ document.addEventListener("DOMContentLoaded", function () {
     // --- Color radios ---
     popup.querySelectorAll(".option-group.color-group input").forEach(radio => {
       radio.addEventListener("change", () => {
-        console.log("thisisi")
+      
         popup.querySelectorAll(".color-option").forEach(label => {
-          const input = label.querySelector("input");
+          const input = radio;
           const colorField = label.querySelector(".color--field");
           const swatch = label.querySelector(".swatch");
 
