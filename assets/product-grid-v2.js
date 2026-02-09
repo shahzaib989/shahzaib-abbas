@@ -114,7 +114,7 @@ document.addEventListener("DOMContentLoaded", function () {
     const product = await res.json();
     
     var currentProduct=product;
-    buildproduct(product);
+    buildProduct(product);
     openPopup();
    }
    catch (err){
