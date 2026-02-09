@@ -3,7 +3,7 @@ document.addEventListener("DOMContentLoaded", function(){
    var mainBody=document.querySelector("body");
    var popupMain=document.querySelector("#popup--info")
    var closebtn=document.querySelector("")
-
+  console.log(allBtnsPopup)
 function openPopup(){
   popupMain.classList.add("active");   
 }
