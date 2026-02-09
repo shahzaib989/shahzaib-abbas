@@ -40,7 +40,7 @@ document.addEventListener("DOMContentLoaded", function () {
       // Color → radios
       if (optionName === "color" || optionName === "colour") {
         const radios = option.values.map(value => `
-          <input type="radio" name="option-${index}" value="${value}" style="display:none;>
+          <input type="radio" name="option-${index}" value="${value}" style="display:none;">
           <label class="color-option">
             <div class="color--field" style="background:${value};">
            
