@@ -75,8 +75,8 @@
           "type": "product",
           "settings": {
             "product": "classic-leather-jacket",
-            "position-left": 0,
-            "position-top": 0,
+            "position-left": 67,
+            "position-top": 15,
             "position-left-mobile": 0,
             "position-top-mobile": 0
           }
@@ -85,8 +85,8 @@
           "type": "product",
           "settings": {
             "product": "classic-varsity-top",
-            "position-left": 0,
-            "position-top": 0,
+            "position-left": 48,
+            "position-top": 25,
             "position-left-mobile": 0,
             "position-top-mobile": 0
           }
