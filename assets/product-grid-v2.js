@@ -1,3 +1,6 @@
 document.addEventListener("DOMContentLoaded", function(){
-    console.log("thisisworking")
+   var allBtnsPopup=document.querySelectorAll(".popup__btn-main");
+   allBtnsPopup.addEventListener("click", function(){
+    
+   })
 })
