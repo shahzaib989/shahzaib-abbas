@@ -98,7 +98,7 @@ document.addEventListener("DOMContentLoaded", function () {
         </div>
         <div class="add__to--cartbtn">
           <button type="button" class="add-to-cartbutton" data-var="${firstVariant.id}">
-          <div class="add-to-cartcontent"
+          <div class="add-to-cartcontent">
             Add to cart
 
           <svg width="36" height="12" viewBox="0 0 36 12" fill="none" xmlns="http://www.w3.org/2000/svg">
