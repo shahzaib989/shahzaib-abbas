@@ -47,6 +47,15 @@
     transform: rotate(45deg);
 }
 
+.popup__wrpper--main {
+    display:none;
+}
+
+.popup__wrpper--main.active{
+    display:flex;
+}
+
+
 @media screen and (max-width: 768px){
     .inner__product--grid--v2 {
     display: grid;
